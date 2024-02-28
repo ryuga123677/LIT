@@ -1,0 +1,15 @@
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+
+.App {
+  background-color: #010014;
+  color: #dcf2f1;
+  font-family: 'arcade';
+
+}
