@@ -78,7 +78,7 @@ function MainHome() {
       }}
     >
       <NavbarMainPage />
-      <ParticleComponent />
+   
       <Box maxWidth="150px">
         <img src={Logo} height="150px" />
       </Box>
@@ -154,7 +154,7 @@ function MainHome() {
                   <Typography
                     textAlign="center"
                     fontWeight="600"
-                    fontFamily="CSGordan"
+                    fontFamily="CDGordon"
                     
                     sx={{ textTransform: "uppercase" }}
                   >
@@ -167,7 +167,7 @@ function MainHome() {
         </Container>
       </Box>
       <Box display="flex"  justifyContent="center">
-        <Typography fontFamily='CDGordan'>SUBSCRIBE TO LIT NEWSLETTER</Typography>
+        <Typography fontFamily='CDGordon'>SUBSCRIBE TO LIT NEWSLETTER</Typography>
       </Box>
       <Box display="flex" marginBottom="30px" justifyContent="center">
         <Box

@@ -7,6 +7,7 @@ import {
   Menu,
   MenuItem,
   Box,
+  Button,
   ListItemIcon,
 } from "@mui/material";
 import LoginIcon from "@mui/icons-material/Login";
@@ -38,7 +39,7 @@ const Navbar = () => {
     <AppBar
       position="static"
       sx={{
-        background: "black",
+        background: '#010014',
         height: 80,
         display: "flex",
         alignItems: "center",
@@ -58,7 +59,6 @@ const Navbar = () => {
       >
         <Box
           sx={{
-            flexGrow: 1,
             display: "flex",
             alignItems: "center",
             cursor: "pointer",
@@ -78,6 +78,15 @@ const Navbar = () => {
             Welcome 👋🏻
           </Typography>
         </Box> */}
+        <Box sx={{  flexGrow: 1,display: "flex",justifyContent:"space-around", alignItems: "center"}}>
+        <Button style={{color:'white',fontFamily:'CSGordon'}}>SOCIAL SPACE</Button>
+        <Button style={{color:'white',fontFamily:'CSGordon'}}>IR ICON</Button>
+        <Button style={{color:'white',fontFamily:'CSGordon'}}>AVATAR STORE</Button>
+        <Button style={{color:'white',fontFamily:'CSGordon'}}>LIT STORE</Button>
+        <Button style={{color:'white',fontFamily:'CSGordon'}}>SUBSCRIBE</Button>
+
+        </Box>
+       
         {isAuthenticated ? (
           <Box ml={4}>
             <IconButton
@@ -118,7 +127,7 @@ const Navbar = () => {
                   navigate("/about");
                   handleClose();
                 }}
-                sx={{ marginBottom: 1 }}
+                sx={{ marginBottom: 1 ,fontFamily:"CSGordon"}}
               >
                 <ListItemIcon>
                   <InfoIcon fontSize="small" />

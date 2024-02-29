@@ -16,6 +16,10 @@ import Clothes from "../common/assets/clothes.png";
 import Ring from "../common/assets/ring.jpg";
 import Shoes from "../common/assets/shoes.png";
 import MarketPlace from "../common/assets/glasses.png";
+import sandle from "../common/assets/sandles.png";
+import silverwatch from "../common/assets/silverwatch.png";
+import jacket from "../common/assets/jacket.png";
+import handbag from "../common/assets/handbag.png";
 import { useAuth } from "../common/context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useDb } from "../common/context/DbContext";
@@ -37,14 +41,14 @@ const Home = () => {
     // },
     {
       id: 2,
-      image: Bags,
+      image: handbag,
       link: "/bags",
       title: "Bags",
       quote: "Fashion is a trend. Style lives within a person.",
     },
     {
       id: 3,
-      image: Clothes,
+      image: jacket,
       link: "/clothes",
       title: "Clothes",
       quote: "Dress like you’re already famous.",
@@ -58,14 +62,14 @@ const Home = () => {
     // },
     {
       id: 5,
-      image: Shoes,
+      image: sandle,
       link: "/shoes",
       title: "Shoes",
       quote: "Give a girl the right shoes, and she can conquer the world.",
     },
     {
       id: 6,
-      image: MarketPlace,
+      image: silverwatch,
       link: "/marketplace",
       title: "Accessories",
       quote: "Discover unique treasures in the marketplace.",
@@ -89,7 +93,7 @@ const Home = () => {
       }}
     >
       <Navbar />
-      <ParticleComponent />
+
 
       <Box
         sx={{
@@ -107,10 +111,10 @@ const Home = () => {
             flexDirection: "column",
           }}
         >
-          <Typography mb={4} variant="h5" fontWeight={700}>
+          <Typography mb={2} variant="h5" sx={{fontFamily:"CSGordon",fontWeight:'600'}}>
             CATEGORIES!
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={2}>
             {imageLinks.map((item) => (
               <Grid
                 item
@@ -156,7 +160,7 @@ const Home = () => {
                     textAlign="center"
                     fontWeight="600"
                     mt={2}
-                    sx={{ textTransform: "uppercase" }}
+                    sx={{ textTransform: "uppercase",fontFamily:"CSGordon" }}
                   >
                     {item.title}
                   </Typography>
