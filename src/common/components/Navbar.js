@@ -79,11 +79,11 @@ const Navbar = () => {
           </Typography>
         </Box> */}
         <Box sx={{  flexGrow: 1,display: "flex",justifyContent:"space-around", alignItems: "center"}}>
-        <Button style={{color:'white',fontFamily:'CSGordon'}}>SOCIAL SPACE</Button>
-        <Button style={{color:'white',fontFamily:'CSGordon'}}>IR ICON</Button>
-        <Button style={{color:'white',fontFamily:'CSGordon'}}>AVATAR STORE</Button>
-        <Button style={{color:'white',fontFamily:'CSGordon'}}>LIT STORE</Button>
-        <Button style={{color:'white',fontFamily:'CSGordon'}}>SUBSCRIBE</Button>
+        <Button style={{color:'white',fontFamily:'CSGordon',fontWeight:'600'}}>SOCIAL SPACE</Button>
+        <Button style={{color:'white',fontFamily:'CSGordon',fontWeight:'600'}}>IR ICON</Button>
+        <Button style={{color:'white',fontFamily:'CSGordon',fontWeight:'600'}}>AVATAR STORE</Button>
+        <Button style={{color:'white',fontFamily:'CSGordon',fontWeight:'600'}}>LIT STORE</Button>
+        <Button style={{color:'white',fontFamily:'CSGordon',fontWeight:'600'}}>SUBSCRIBE</Button>
 
         </Box>
        

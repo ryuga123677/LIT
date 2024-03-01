@@ -25,6 +25,7 @@ import { useNavigate } from "react-router-dom";
 import { useDb } from "../common/context/DbContext";
 import { ScaleLoader } from "react-spinners";
 import ParticleComponent from "../common/components/ParticleComponent";
+import bg2 from "../common/assets/bg2.png";
 
 const Home = () => {
   const { userId, isAuthenticated } = useAuth();
@@ -90,6 +91,9 @@ const Home = () => {
         height: "100vh",
         display: "flex",
         flexDirection: "column",
+        backgroundImage: `url(${bg2})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }}
     >
       <Navbar />

@@ -15,6 +15,7 @@ import Ir from "../common/assets/ir.png";
 import Avatar from "../common/assets/avatar.png";
 import Logo from "../common/assets/logo.png";
 import Lit from "../common/assets/litstore.png";
+import bg from "../common/assets/bg.png";
 import { useNavigate } from "react-router-dom";
 import { useDb } from "../common/context/DbContext";
 import { ScaleLoader } from "react-spinners";
@@ -59,10 +60,13 @@ function MainHome() {
   if (loading) {
     return (
       <Box
-        height="100vh"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
+       sx={{
+        height:"100vh",
+        display:"flex",
+        alignItems:"center",
+        justifyContent:"center"
+       }}
+      
       >
         <ScaleLoader color="white" width={6} height={42} />
       </Box>
@@ -75,6 +79,9 @@ function MainHome() {
         height: "100vh",
         display: "flex",
         flexDirection: "column",
+        backgroundImage: `url(${bg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }}
     >
       <NavbarMainPage />
@@ -154,7 +161,7 @@ function MainHome() {
                   <Typography
                     textAlign="center"
                     fontWeight="600"
-                    fontFamily="CDGordon"
+                    fontFamily="CDGordo n"
                     
                     sx={{ textTransform: "uppercase" }}
                   >
