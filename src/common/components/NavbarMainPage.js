@@ -171,10 +171,11 @@ const NavbarMainPage = () => {
               onClick={() => {
                 navigate("/login");
               }}
-            >
+            >    <Typography fontFamily="CSGordan">SIGN IN</Typography>
               <DensityMediumOutlinedIcon fontSize="small" />
+          
             </IconButton>
-            <Typography fontFamily="CSGordan">SIGN IN</Typography>
+            
           </>
         )}
       </Toolbar>
