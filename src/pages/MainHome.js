@@ -108,12 +108,17 @@ function MainHome() {
             onClick={() => {
               navigate("/home");
             }}
-            sx={{ marginTop: { xs: "20px", sm: "-50px" } }}
+            sx={{ marginTop: { xs: "20px", sm: "-50px" } ,
+         
+          height:{xs:'130px',sm:'190px'},
+          width:{xs:'130px',sm:'190px'},
+      
+          }}
             mb={6}
           >
             <img
               src={Play}
-              style={{ height: "200px", width: "205px", cursor: "pointer" }}
+              style={ {height:'100%',width:'100%', cursor: "pointer" }}
             />
           </Box>
 
@@ -147,8 +152,8 @@ function MainHome() {
                   <Card
                     elevation={3}
                     sx={{
-                      height: 200,
-                      width: 200,
+                      height:{xs:'130px',sm:'190px'},
+                      width:{xs:'130px',sm:'190px'},
                       backgroundColor: "transparent",
                     
                       borderRadius: 2,
