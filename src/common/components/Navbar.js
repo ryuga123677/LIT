@@ -40,7 +40,7 @@ const Navbar = () => {
       position="static"
       sx={{
         background: '#010014',
-        height: 80,
+        height: 60,
         display: "flex",
         alignItems: "center",
         flexDirection: "row",

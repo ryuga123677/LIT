@@ -19,7 +19,7 @@ import GroupIcon from "@mui/icons-material/Group";
 import Logo from "../assets/logo.png";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import DensityMediumOutlinedIcon from '@mui/icons-material/DensityMediumOutlined';
+import DensityMediumOutlinedIcon from "@mui/icons-material/DensityMediumOutlined";
 
 const NavbarMainPage = () => {
   const { isAuthenticated, login, logout } = useAuth();
@@ -38,9 +38,8 @@ const NavbarMainPage = () => {
     <AppBar
       position="static"
       sx={{
-        background: '#010014',
-        height: 40,
-
+        background: "#010014",
+        height: 60,
         display: "flex",
         alignItems: "center",
         flexDirection: "row",
@@ -50,16 +49,17 @@ const NavbarMainPage = () => {
     >
       <Toolbar
         sx={{
+          
           display: "flex",
           alignItems: "center",
-          flexDirection: "row-reverse",
-          
+          flexDirection: "row",
+          justifyContent: "space-between",
+
           width: "100%",
         }}
       >
-        {/* <Box
+        <Box
           sx={{
-            flexGrow: 1,
             display: "flex",
             alignItems: "center",
             cursor: "pointer",
@@ -71,9 +71,9 @@ const NavbarMainPage = () => {
           <img
             src={Logo}
             alt="Logo"
-            style={{ height: "50px", marginRight: "10px" }}
+            style={{ height: "50px",marginRight: "10px", marginLeft:"10px" }}
           />
-        </Box> */}
+        </Box>
         {/* <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
           <Typography variant="h5" fontWeight={600}>
             Welcome 👋🏻
@@ -132,7 +132,6 @@ const NavbarMainPage = () => {
                   handleClose();
                 }}
                 sx={{ marginBottom: 1 }}
-                
               >
                 <ListItemIcon>
                   <EmailIcon fontSize="small" />
@@ -167,19 +166,16 @@ const NavbarMainPage = () => {
           </Box>
         ) : (
           <>
-         
-              <IconButton
-            color="inherit"
-
-            onClick={() => {
-              navigate("/login");
-            }}
-          >
-            <DensityMediumOutlinedIcon fontSize="small"/>
-          </IconButton>
-          <Typography fontFamily='CSGordan'>SIGN IN</Typography>
+            <IconButton
+              color="inherit"
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              <DensityMediumOutlinedIcon fontSize="small" />
+            </IconButton>
+            <Typography fontFamily="CSGordan">SIGN IN</Typography>
           </>
-      
         )}
       </Toolbar>
     </AppBar>

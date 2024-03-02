@@ -157,7 +157,8 @@ const Home = () => {
                       component="img"
                       alt={`Image ${item.id}`}
                       height="100%"
-                      sx={{ objectFit: "cover", borderRadius: 2 }}
+                      sx={{objectFit:"cover"}}
+                      
                     />
                   </Card>
                   <Typography

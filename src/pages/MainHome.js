@@ -20,7 +20,7 @@ import { useNavigate } from "react-router-dom";
 import { useDb } from "../common/context/DbContext";
 import { ScaleLoader } from "react-spinners";
 import NavbarMainPage from "../common/components/NavbarMainPage";
-import MarkEmailUnreadOutlinedIcon from '@mui/icons-material/MarkEmailUnreadOutlined';
+import MarkEmailUnreadOutlinedIcon from "@mui/icons-material/MarkEmailUnreadOutlined";
 
 function MainHome() {
   const navigate = useNavigate();
@@ -60,13 +60,12 @@ function MainHome() {
   if (loading) {
     return (
       <Box
-       sx={{
-        height:"100vh",
-        display:"flex",
-        alignItems:"center",
-        justifyContent:"center"
-       }}
-      
+        sx={{
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
         <ScaleLoader color="white" width={6} height={42} />
       </Box>
@@ -77,22 +76,20 @@ function MainHome() {
     <Box
       sx={{
         height: "100vh",
+        width: "100vw",
         display: "flex",
         flexDirection: "column",
+
         backgroundImage: `url(${bg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       <NavbarMainPage />
-   
-      <Box maxWidth="150px">
-        <img src={Logo} height="150px" />
-      </Box>
 
       <Box
         sx={{
-          flexGrow: 1,
+          flex: "1",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -102,31 +99,40 @@ function MainHome() {
           sx={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "center", 
             flexDirection: "column",
+        
           }}
         >
           <Box
             onClick={() => {
               navigate("/home");
             }}
-            sx={{ marginTop: "-50px" }}
+            sx={{ marginTop: { xs: "20px", sm: "-50px" } }}
             mb={6}
           >
-            <img src={Play} style={{ height: "200px",width:"205px", cursor: "pointer" }} />
+            <img
+              src={Play}
+              style={{ height: "200px", width: "205px", cursor: "pointer" }}
+            />
           </Box>
 
-          <Grid container spacing={1}>
+          <Grid container spacing={1} sx={{ justifyContent:"center"}}>
             {imageLinks.map((item) => (
               <Grid
                 item
                 key={item.id}
-                xs={3}
+                xs={9} // On extra small screens, take up 6 columns (half of the container)
+                sm={6} // On small screens and above, take up 3 columns
+                md={3} // On medium screens and above, take up 3 columns
+                lg={3} // On large screens and above, take up 3 columns
+                xl={3} // On extra large screens and above, take up 3 columns
                 sx={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   flexDirection: "column",
+                
                 }}
               >
                 <Box
@@ -134,15 +140,17 @@ function MainHome() {
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
+                   
                     justifyContent: "center",
                   }}
                 >
                   <Card
                     elevation={3}
                     sx={{
-                      height: 190,
-                      width: 190,
+                      height: 200,
+                      width: 200,
                       backgroundColor: "transparent",
+                    
                       borderRadius: 2,
                       transition: "transform 0.3s",
                       "&:hover": {
@@ -161,8 +169,7 @@ function MainHome() {
                   <Typography
                     textAlign="center"
                     fontWeight="600"
-                    fontFamily="CDGordo n"
-                    
+                    fontFamily="CDGordon"
                     sx={{ textTransform: "uppercase" }}
                   >
                     {item.title}
@@ -173,22 +180,27 @@ function MainHome() {
           </Grid>
         </Container>
       </Box>
-      <Box display="flex"  justifyContent="center">
-        <Typography fontFamily='CDGordon'>SUBSCRIBE TO LIT NEWSLETTER</Typography>
+      <Box display="flex" justifyContent="center">
+        <Typography fontFamily="CDGordon">
+          SUBSCRIBE TO LIT NEWSLETTER
+        </Typography>
       </Box>
-      <Box display="flex" marginBottom="30px" justifyContent="center">
+      <Box
+        display="flex"
+        marginTop="10px"
+        marginBottom="60px"
+        justifyContent="center"
+      >
         <Box
           width="220px"
-          paddingTop="-20px"
           border={2}
           borderRadius={1}
           borderColor="white"
           height="30px"
           display="flex"
-          flexDirection='row-reverse'
-
+          flexDirection="row-reverse"
         >
-          <MarkEmailUnreadOutlinedIcon/>
+          <MarkEmailUnreadOutlinedIcon />
         </Box>
       </Box>
     </Box>
