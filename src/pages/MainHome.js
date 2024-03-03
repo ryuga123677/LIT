@@ -92,7 +92,7 @@ function MainHome() {
 
       <Box
         sx={{
-          marginTop: "20px",
+          marginTop: {xs:"60px",sm:"20px"},
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
