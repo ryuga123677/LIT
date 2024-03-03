@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../common/components/Navbar";
+
 import {
   Box,
   Card,
@@ -7,6 +8,7 @@ import {
   Container,
   Grid,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import ParticleComponent from "../common/components/ParticleComponent";
 import Play from "../common/assets/play.png";
@@ -25,6 +27,7 @@ import MarkEmailUnreadOutlinedIcon from "@mui/icons-material/MarkEmailUnreadOutl
 function MainHome() {
   const navigate = useNavigate();
   const { loading } = useDb();
+  const isXsScreen = useMediaQuery("(max-width:600px)");
 
   const imageLinks = [
     {
@@ -99,35 +102,36 @@ function MainHome() {
           sx={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "center", 
+            justifyContent: "center",
             flexDirection: "column",
-        
           }}
         >
-          <Box
-            onClick={() => {
-              navigate("/home");
-            }}
-            sx={{ marginTop: { xs: "20px", sm: "-50px" } ,
-         
-          height:{xs:'130px',sm:'190px'},
-          width:{xs:'130px',sm:'190px'},
-      
-          }}
-            mb={6}
-          >
-            <img
-              src={Play}
-              style={ {height:'100%',width:'100%', cursor: "pointer" }}
-            />
-          </Box>
+          {!isXsScreen && (
+            <Box
+              onClick={() => {
+                navigate("/home");
+              }}
+              sx={{
+                marginTop: "20px",
 
-          <Grid container spacing={1} sx={{ justifyContent:"center"}}>
+                height: "190px",
+                width: "190px",
+              }}
+              mb={6}
+            >
+              <img
+                src={Play}
+                style={{ height: "100%", width: "100%", cursor: "pointer" }}
+              />
+            </Box>
+          )}
+
+          <Grid container spacing={1} sx={{ justifyContent: "center" }}>
             {imageLinks.map((item) => (
               <Grid
                 item
                 key={item.id}
-                xs={9} // On extra small screens, take up 6 columns (half of the container)
+                xs={6} // On extra small screens, take up 6 columns (half of the container)
                 sm={6} // On small screens and above, take up 3 columns
                 md={3} // On medium screens and above, take up 3 columns
                 lg={3} // On large screens and above, take up 3 columns
@@ -137,7 +141,6 @@ function MainHome() {
                   alignItems: "center",
                   justifyContent: "center",
                   flexDirection: "column",
-                
                 }}
               >
                 <Box
@@ -145,17 +148,17 @@ function MainHome() {
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
-                   
+
                     justifyContent: "center",
                   }}
                 >
                   <Card
                     elevation={3}
                     sx={{
-                      height:{xs:'130px',sm:'190px'},
-                      width:{xs:'130px',sm:'190px'},
+                      height: { xs: "120px", sm: "190px" },
+                      width: { xs: "120px", sm: "190px" },
                       backgroundColor: "transparent",
-                    
+
                       borderRadius: 2,
                       transition: "transform 0.3s",
                       "&:hover": {
@@ -185,6 +188,26 @@ function MainHome() {
           </Grid>
         </Container>
       </Box>
+      {isXsScreen && (
+        <Box
+          onClick={() => {
+            navigate("/home");
+          }}
+          sx={{
+            marginTop: { xs: "20px" },
+
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          mb={1}
+        >
+          <img
+            src={Play}
+            style={{ height: "120px", width: "120px", cursor: "pointer" }}
+          />
+        </Box>
+      )}
       <Box display="flex" justifyContent="center">
         <Typography fontFamily="CDGordon">
           SUBSCRIBE TO LIT NEWSLETTER
