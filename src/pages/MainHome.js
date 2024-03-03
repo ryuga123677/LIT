@@ -194,7 +194,7 @@ function MainHome() {
             navigate("/home");
           }}
           sx={{
-            marginTop: { xs: "20px" },
+            
 
             display: "flex",
             justifyContent: "center",
@@ -209,7 +209,7 @@ function MainHome() {
         </Box>
       )}
       <Box display="flex" justifyContent="center">
-        <Typography fontFamily="CDGordon">
+        <Typography fontFamily="CDGordon" >
           SUBSCRIBE TO LIT NEWSLETTER
         </Typography>
       </Box>
@@ -220,11 +220,13 @@ function MainHome() {
         justifyContent="center"
       >
         <Box
-          width="220px"
+         sx={{ width:{xs:'150px',sm:'220px'},
+        height:{xs:'20px',sm:'30px'}        
+        }}
           border={2}
           borderRadius={1}
           borderColor="white"
-          height="30px"
+       
           display="flex"
           flexDirection="row-reverse"
         >
