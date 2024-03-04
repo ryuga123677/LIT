@@ -92,7 +92,7 @@ function MainHome() {
 
       <Box
         sx={{
-          marginTop: {xs:"60px",sm:"20px"},
+          marginTop: {xs:"10px",sm:"20px"},
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -126,6 +126,20 @@ function MainHome() {
               />
             </Box>
           )}
+          {isXsScreen&&(<Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
+          }}
+  
+        >
+          <img
+            src={Logo}
+            alt="Logo"
+            style={{  height: "120px", width: "120px", }}
+          />
+        </Box>)}
 
           <Grid container spacing={1} sx={{ justifyContent: "center" }}>
             {imageLinks.map((item) => (

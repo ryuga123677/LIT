@@ -8,6 +8,7 @@ import {
   MenuItem,
   Box,
   ListItemIcon,
+  useMediaQuery
 } from "@mui/material";
 import LoginIcon from "@mui/icons-material/Login";
 import AccountCircle from "@mui/icons-material/AccountCircle";
@@ -24,6 +25,7 @@ import DensityMediumOutlinedIcon from "@mui/icons-material/DensityMediumOutlined
 const NavbarMainPage = () => {
   const { isAuthenticated, login, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isXsScreen = useMediaQuery("(max-width:600px)");
   const navigate = useNavigate();
 
   const handleMenu = () => {
@@ -52,28 +54,13 @@ const NavbarMainPage = () => {
           
           display: "flex",
           alignItems: "center",
-          flexDirection: "row",
+          flexDirection: "row-reverse",
           justifyContent: "space-between",
 
           width: "100%",
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            cursor: "pointer",
-          }}
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          <img
-            src={Logo}
-            alt="Logo"
-            style={{ height: "50px",marginRight: "10px", marginLeft:"10px" }}
-          />
-        </Box>
+    
         {/* <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
           <Typography variant="h5" fontWeight={600}>
             Welcome 👋🏻
@@ -178,6 +165,22 @@ const NavbarMainPage = () => {
             
           </>
         )}
+            {!isXsScreen && (<Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          <img
+            src={Logo}
+            alt="Logo"
+            style={{ height: "50px",marginRight: "10px", marginLeft:"10px" }}
+          />
+        </Box>)}
       </Toolbar>
     </AppBar>
   );
