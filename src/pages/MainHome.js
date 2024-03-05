@@ -119,7 +119,7 @@ function MainHome() {
                 height: "190px",
                 width: "190px",
               }}
-              mb={8}
+              mb={6}
             >
               <img
                 src={Play}

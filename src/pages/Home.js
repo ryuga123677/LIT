@@ -136,8 +136,8 @@ const Home = () => {
                   <Card
                     elevation={3}
                     sx={{
-                      height: {xs:'130',sm:'230'},
-                      width: {xs:'130',sm:'230'},
+                      height: {xs:'130',sm:'230px'},
+                      width: {xs:'130',sm:'230px'},
                       backgroundColor: "transparent",
                       borderRadius: 2,
                       transition: "transform 0.3s",
