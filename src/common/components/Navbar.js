@@ -9,6 +9,7 @@ import {
   Box,
   Button,
   ListItemIcon,
+  useMediaQuery
 } from "@mui/material";
 import LoginIcon from "@mui/icons-material/Login";
 import AccountCircle from "@mui/icons-material/AccountCircle";
@@ -25,6 +26,7 @@ import DensityMediumOutlinedIcon from '@mui/icons-material/DensityMediumOutlined
 const Navbar = () => {
   const { isAuthenticated, login, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isXsScreen = useMediaQuery("(max-width:600px)");
   const navigate = useNavigate();
 
   const handleMenu = () => {
@@ -78,14 +80,14 @@ const Navbar = () => {
             Welcome 👋🏻
           </Typography>
         </Box> */}
-        <Box sx={{  flexGrow: 1,display: "flex",justifyContent:"space-around", alignItems: "center"}}>
+        {!isXsScreen && (<Box sx={{  flexGrow: 1,display: "flex",justifyContent:"space-around", alignItems: "center"}}>
         <Button style={{color:'white',fontFamily:'CSGordon',fontWeight:'600'}}>SOCIAL SPACE</Button>
         <Button style={{color:'white',fontFamily:'CSGordon',fontWeight:'600'}}>IR ICON</Button>
         <Button style={{color:'white',fontFamily:'CSGordon',fontWeight:'600'}}>AVATAR STORE</Button>
         <Button style={{color:'white',fontFamily:'CSGordon',fontWeight:'600'}}>LIT STORE</Button>
         <Button style={{color:'white',fontFamily:'CSGordon',fontWeight:'600'}}>SUBSCRIBE</Button>
 
-        </Box>
+        </Box>)}
        
         {isAuthenticated ? (
           <Box ml={4}>

@@ -123,7 +123,8 @@ const Home = () => {
               <Grid
                 item
                 key={item.id}
-                xs={3}
+                xs={6}
+                sm={3}
                 sx={{
                   display: "flex",
                   alignItems: "center",
@@ -135,8 +136,8 @@ const Home = () => {
                   <Card
                     elevation={3}
                     sx={{
-                      height: 250,
-                      width: 250,
+                      height: {xs:'130px',sm:'230px'},
+                      width: {xs:'130px',sm:'230px'},
                       backgroundColor: "transparent",
                       borderRadius: 2,
                       transition: "transform 0.3s",
@@ -157,7 +158,7 @@ const Home = () => {
                       component="img"
                       alt={`Image ${item.id}`}
                       height="100%"
-                      sx={{objectFit:"cover"}}
+                      sx={{objectFit:"fill"}}
                       
                     />
                   </Card>

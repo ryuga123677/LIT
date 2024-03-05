@@ -114,11 +114,12 @@ function MainHome() {
               }}
               sx={{
                 marginTop: "20px",
+            
 
                 height: "190px",
                 width: "190px",
               }}
-              mb={6}
+              mb={8}
             >
               <img
                 src={Play}
