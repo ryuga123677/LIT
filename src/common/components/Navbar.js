@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, MouseEvent } from "react";
 import {
   AppBar,
   Toolbar,
@@ -9,8 +9,11 @@ import {
   Box,
   Button,
   ListItemIcon,
-  useMediaQuery
+  useMediaQuery,
 } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 import LoginIcon from "@mui/icons-material/Login";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
@@ -21,7 +24,7 @@ import GroupIcon from "@mui/icons-material/Group";
 import Logo from "../assets/logo.png";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import DensityMediumOutlinedIcon from '@mui/icons-material/DensityMediumOutlined';
+import DensityMediumOutlinedIcon from "@mui/icons-material/DensityMediumOutlined";
 
 const Navbar = () => {
   const { isAuthenticated, login, logout } = useAuth();
@@ -29,19 +32,29 @@ const Navbar = () => {
   const isXsScreen = useMediaQuery("(max-width:600px)");
   const navigate = useNavigate();
 
+  const [anchorNavopen, setAnchorNavopen] = useState(false);
+
+  const handleNav = () => {
+    setAnchorNavopen(true);
+  };
+
+  const navClose = () => {
+    setAnchorNavopen(false);
+  };
   const handleMenu = () => {
     setIsMenuOpen(true);
   };
 
   const handleClose = () => {
     setIsMenuOpen(false);
+    setAnchorNavopen(false);
   };
 
   return (
     <AppBar
       position="static"
       sx={{
-        background: '#010014',
+        background: "#010014",
         height: 60,
         display: "flex",
         alignItems: "center",
@@ -80,15 +93,132 @@ const Navbar = () => {
             Welcome 👋🏻
           </Typography>
         </Box> */}
-        {!isXsScreen && (<Box sx={{  flexGrow: 1,display: "flex",justifyContent:"space-around", alignItems: "center"}}>
-        <Button style={{color:'white',fontFamily:'CSGordon',fontWeight:'600'}}>SOCIAL SPACE</Button>
-        <Button style={{color:'white',fontFamily:'CSGordon',fontWeight:'600'}}>IR ICON</Button>
-        <Button style={{color:'white',fontFamily:'CSGordon',fontWeight:'600'}}>AVATAR STORE</Button>
-        <Button style={{color:'white',fontFamily:'CSGordon',fontWeight:'600'}}>LIT STORE</Button>
-        <Button style={{color:'white',fontFamily:'CSGordon',fontWeight:'600'}}>SUBSCRIBE</Button>
+        {!isXsScreen && (
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: "flex",
+              justifyContent: "space-around",
+              alignItems: "center",
+            }}
+          >
+            <Button
+              style={{
+                color: "white",
+                fontFamily: "CSGordon",
+                fontWeight: "600",
+              }}
+            >
+              SOCIAL SPACE
+            </Button>
+            <Button
+              style={{
+                color: "white",
+                fontFamily: "CSGordon",
+                fontWeight: "600",
+              }}
+            >
+              IR ICON
+            </Button>
+            <Button
+              style={{
+                color: "white",
+                fontFamily: "CSGordon",
+                fontWeight: "600",
+              }}
+            >
+              AVATAR STORE
+            </Button>
+            <Button
+              style={{
+                color: "white",
+                fontFamily: "CSGordon",
+                fontWeight: "600",
+              }}
+            >
+              LIT STORE
+            </Button>
+            <Button
+              style={{
+                color: "white",
+                fontFamily: "CSGordon",
+                fontWeight: "600",
+              }}
+            >
+              SUBSCRIBE
+            </Button>
+          </Box>
+        )}
 
-        </Box>)}
-       
+        {isXsScreen && (
+          <Box>
+            <IconButton size="large" onClick={handleNav} color="inherit">
+              <ExpandMoreIcon />
+            </IconButton>
+
+            <Menu
+              // id="menu-appbar"
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              open={anchorNavopen}
+              onClose={navClose}
+              sx={{ marginTop: 5, marginLeft: 10 }}
+            >
+              <MenuItem
+                onClick={() => {
+                  navigate("/socialspace");
+                  navClose();
+                }}
+                sx={{ marginBottom: 1, width: 200 }}
+              >
+                SOCIAL SPACE
+              </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  navigate("/iricon");
+                  navClose();
+                }}
+                sx={{ marginBottom: 1, width: 200 }}
+              >
+                IR ICON
+              </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  navigate("/avatarstore");
+                  navClose();
+                }}
+                sx={{ marginBottom: 1, width: 200 }}
+              >
+                AVATAR STORE
+              </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  navigate("/litstore");
+                  navClose();
+                }}
+                sx={{ marginBottom: 1, width: 200 }}
+              >
+                LIT STORE
+              </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  navigate("/subscribe");
+                  navClose();
+                }}
+                sx={{ marginBottom: 1, width: 200 }}
+              >
+                SUBSCRIBE
+              </MenuItem>
+            </Menu>
+          </Box>
+        )}
+
         {isAuthenticated ? (
           <Box ml={4}>
             <IconButton
@@ -129,7 +259,7 @@ const Navbar = () => {
                   navigate("/about");
                   handleClose();
                 }}
-                sx={{ marginBottom: 1 ,fontFamily:"CSGordon"}}
+                sx={{ marginBottom: 1, fontFamily: "CSGordon" }}
               >
                 <ListItemIcon>
                   <InfoIcon fontSize="small" />
@@ -142,7 +272,6 @@ const Navbar = () => {
                   handleClose();
                 }}
                 sx={{ marginBottom: 1 }}
-                
               >
                 <ListItemIcon>
                   <EmailIcon fontSize="small" />
@@ -176,18 +305,17 @@ const Navbar = () => {
             </Menu>
           </Box>
         ) : (
-          <><Typography fontFamily='CSGordan'>SIGN IN</Typography>
-              <IconButton
-            color="inherit"
-
-            onClick={() => {
-              navigate("/login");
-            }}
-          >
-            <DensityMediumOutlinedIcon fontSize="small"/>
-          </IconButton>
+          <>
+            <Typography fontFamily="CSGordan">SIGN IN</Typography>
+            <IconButton
+              color="inherit"
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              <DensityMediumOutlinedIcon fontSize="small" />
+            </IconButton>
           </>
-      
         )}
       </Toolbar>
     </AppBar>
