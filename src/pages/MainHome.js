@@ -223,8 +223,8 @@ function MainHome() {
           />
         </Box>
       )}
-      <Box display="flex" justifyContent="center" marginTop={6}>
-        <Link  href="https://www.google.com"  fontFamily="CDGordon" color="inherit" underline="hover">NEWSLETTER</Link>
+      <Box display="flex" justifyContent="center" marginTop={5}>
+        <Link  href="https://www.google.com"  fontFamily="CDGordon" fontWeight={600} fontSize={18} color="inherit" underline="hover">NEWSLETTER</Link>
       </Box>
       <Box
         display="flex"

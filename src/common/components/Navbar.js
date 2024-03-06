@@ -78,79 +78,16 @@ const Navbar = () => {
             alignItems: "center",
             cursor: "pointer",
           }}
-          onClick={() => {
+       
+        >
+          <img    onClick={() => {
             navigate("/");
           }}
-        >
-          <img
             src={Logo}
             alt="Logo"
             style={{ height: "50px", marginRight: "10px" }}
           />
-        </Box>
-        {/* <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
-          <Typography variant="h5" fontWeight={600}>
-            Welcome 👋🏻
-          </Typography>
-        </Box> */}
-        {!isXsScreen && (
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: "flex",
-              justifyContent: "space-around",
-              alignItems: "center",
-            }}
-          >
-            <Button
-              style={{
-                color: "white",
-                fontFamily: "CSGordon",
-                fontWeight: "600",
-              }}
-            >
-              SOCIAL SPACE
-            </Button>
-            <Button
-              style={{
-                color: "white",
-                fontFamily: "CSGordon",
-                fontWeight: "600",
-              }}
-            >
-              IR ICON
-            </Button>
-            <Button
-              style={{
-                color: "white",
-                fontFamily: "CSGordon",
-                fontWeight: "600",
-              }}
-            >
-              AVATAR STORE
-            </Button>
-            <Button
-              style={{
-                color: "white",
-                fontFamily: "CSGordon",
-                fontWeight: "600",
-              }}
-            >
-              LIT STORE
-            </Button>
-            <Button
-              style={{
-                color: "white",
-                fontFamily: "CSGordon",
-                fontWeight: "600",
-              }}
-            >
-              SUBSCRIBE
-            </Button>
-          </Box>
-        )}
-
-        {isXsScreen && (
+            {isXsScreen && (
           <Box>
             <IconButton size="large" onClick={handleNav} color="inherit">
               <ExpandMoreIcon />
@@ -219,6 +156,70 @@ const Navbar = () => {
           </Box>
         )}
 
+        </Box>
+        {/* <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
+          <Typography variant="h5" fontWeight={600}>
+            Welcome 👋🏻
+          </Typography>
+        </Box> */}
+        {!isXsScreen && (
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: "flex",
+              justifyContent: "space-around",
+              alignItems: "center",
+            }}
+          >
+            <Button
+              style={{
+                color: "white",
+                fontFamily: "CSGordon",
+                fontWeight: "600",
+              }}
+            >
+              SOCIAL SPACE
+            </Button>
+            <Button
+              style={{
+                color: "white",
+                fontFamily: "CSGordon",
+                fontWeight: "600",
+              }}
+            >
+              IR ICON
+            </Button>
+            <Button
+              style={{
+                color: "white",
+                fontFamily: "CSGordon",
+                fontWeight: "600",
+              }}
+            >
+              AVATAR STORE
+            </Button>
+            <Button
+              style={{
+                color: "white",
+                fontFamily: "CSGordon",
+                fontWeight: "600",
+              }}
+            >
+              LIT STORE
+            </Button>
+            <Button
+              style={{
+                color: "white",
+                fontFamily: "CSGordon",
+                fontWeight: "600",
+              }}
+            >
+              SUBSCRIBE
+            </Button>
+          </Box>
+        )}
+
+      
         {isAuthenticated ? (
           <Box ml={4}>
             <IconButton
