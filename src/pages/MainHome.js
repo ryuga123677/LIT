@@ -9,6 +9,7 @@ import {
   Grid,
   Typography,
   useMediaQuery,
+  Link
 } from "@mui/material";
 import ParticleComponent from "../common/components/ParticleComponent";
 import Play from "../common/assets/play.png";
@@ -92,11 +93,10 @@ function MainHome() {
 
       <Box
         sx={{
-          marginTop: {xs:"10px",sm:"20px"},
+          marginTop: { xs: "10px", sm: "20px" },
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-    
         }}
       >
         <Container
@@ -114,7 +114,6 @@ function MainHome() {
               }}
               sx={{
                 marginTop: "20px",
-            
 
                 height: "190px",
                 width: "190px",
@@ -127,20 +126,21 @@ function MainHome() {
               />
             </Box>
           )}
-          {isXsScreen&&(<Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            cursor: "pointer",
-          }}
-  
-        >
-          <img
-            src={Logo}
-            alt="Logo"
-            style={{  height: "120px", width: "120px", }}
-          />
-        </Box>)}
+          {isXsScreen && (
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                cursor: "pointer",
+              }}
+            >
+              <img
+                src={Logo}
+                alt="Logo"
+                style={{ height: "120px", width: "120px" }}
+              />
+            </Box>
+          )}
 
           <Grid container spacing={1} sx={{ justifyContent: "center" }}>
             {imageLinks.map((item) => (
@@ -223,10 +223,8 @@ function MainHome() {
           />
         </Box>
       )}
-      <Box display="flex" justifyContent="center">
-        <Typography fontFamily="CDGordon">
-          SUBSCRIBE TO LIT NEWSLETTER
-        </Typography>
+      <Box display="flex" justifyContent="center" marginTop={6}>
+        <Link  href="https://www.google.com"  fontFamily="CDGordon" color="inherit" underline="hover">NEWSLETTER</Link>
       </Box>
       <Box
         display="flex"
@@ -234,7 +232,7 @@ function MainHome() {
         marginBottom="60px"
         justifyContent="center"
       >
-        <Box
+        {/* <Box
           sx={{ width: "220px", height: "30px" }}
           border={2}
           borderRadius={1}
@@ -242,8 +240,9 @@ function MainHome() {
           display="flex"
           flexDirection="row-reverse"
         >
-          <MarkEmailUnreadOutlinedIcon />
+          <MarkEmailUnreadOutlinedIcon /> 
         </Box>
+         */}
       </Box>
     </Box>
   );
