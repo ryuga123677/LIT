@@ -133,9 +133,10 @@ const Home = () => {
                 }}
               >
                 <Box>
-                  <Card
+                  <Card 
                     elevation={3}
-                    sx={{
+              
+                    sx={{ 
                       height: {xs:'130',sm:'230px'},
                       width: {xs:'130',sm:'230px'},
                       backgroundColor: "transparent",
@@ -153,7 +154,7 @@ const Home = () => {
                       }
                     }}
                   >
-                    <CardMedia
+                    <CardMedia 
                       image={item.image}
                       component="img"
                       alt={`Image ${item.id}`}

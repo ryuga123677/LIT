@@ -88,31 +88,32 @@ const Navbar = () => {
             style={{ height: "50px", marginRight: "10px" }}
           />
             {isXsScreen && (
-          <Box>
+          <Box >
             <IconButton size="large" onClick={handleNav} color="inherit">
               <ExpandMoreIcon />
             </IconButton>
 
             <Menu
               // id="menu-appbar"
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
+              // anchorOrigin={{
+              //   vertical: "top",
+              //   horizontal: "left",
+              // }}
+              // transformOrigin={{
+              //   vertical: "top",
+              //   horizontal: "left",
+              // }}
               open={anchorNavopen}
               onClose={navClose}
-              sx={{ marginTop: 5, marginLeft: 10 }}
+              sx={{ height: "100vh" }}
+              anchorEl={anchorNavopen ? document.body : null}
             >
               <MenuItem
                 onClick={() => {
                   navigate("/socialspace");
                   navClose();
                 }}
-                sx={{ marginBottom: 1, width: 200 }}
+                sx={{ width: "100vw" }}
               >
                 SOCIAL SPACE
               </MenuItem>
@@ -121,7 +122,7 @@ const Navbar = () => {
                   navigate("/iricon");
                   navClose();
                 }}
-                sx={{ marginBottom: 1, width: 200 }}
+                sx={{width: "100vw" }}
               >
                 IR ICON
               </MenuItem>
@@ -130,7 +131,7 @@ const Navbar = () => {
                   navigate("/avatarstore");
                   navClose();
                 }}
-                sx={{ marginBottom: 1, width: 200 }}
+                sx={{width: "100vw" }}
               >
                 AVATAR STORE
               </MenuItem>
@@ -139,7 +140,7 @@ const Navbar = () => {
                   navigate("/litstore");
                   navClose();
                 }}
-                sx={{ marginBottom: 1, width: 200 }}
+                sx={{ width: "100vw" }}
               >
                 LIT STORE
               </MenuItem>
@@ -148,7 +149,7 @@ const Navbar = () => {
                   navigate("/subscribe");
                   navClose();
                 }}
-                sx={{ marginBottom: 1, width: 200 }}
+                sx={{ width: "100vw" }}
               >
                 SUBSCRIBE
               </MenuItem>
