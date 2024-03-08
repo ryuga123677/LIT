@@ -105,15 +105,24 @@ const Navbar = () => {
               // }}
               open={anchorNavopen}
               onClose={navClose}
-              sx={{ height: "100vh" }}
-              anchorEl={anchorNavopen ? document.body : null}
+              PaperProps={{
+                sx: {
+                  width: "100vw",
+                  height: "100vh",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems:"center",
+                },
+              }}
+              
+              
             >
               <MenuItem
                 onClick={() => {
                   navigate("/socialspace");
                   navClose();
                 }}
-                sx={{ width: "100vw" }}
+                sx={{width:"max-content" }}
               >
                 SOCIAL SPACE
               </MenuItem>
@@ -122,7 +131,7 @@ const Navbar = () => {
                   navigate("/iricon");
                   navClose();
                 }}
-                sx={{width: "100vw" }}
+                sx={{width:"max-content" }}
               >
                 IR ICON
               </MenuItem>
@@ -131,7 +140,7 @@ const Navbar = () => {
                   navigate("/avatarstore");
                   navClose();
                 }}
-                sx={{width: "100vw" }}
+                sx={{width:"max-content" }}
               >
                 AVATAR STORE
               </MenuItem>
@@ -140,7 +149,7 @@ const Navbar = () => {
                   navigate("/litstore");
                   navClose();
                 }}
-                sx={{ width: "100vw" }}
+                sx={{ width:"max-content" }}
               >
                 LIT STORE
               </MenuItem>
@@ -149,7 +158,7 @@ const Navbar = () => {
                   navigate("/subscribe");
                   navClose();
                 }}
-                sx={{ width: "100vw" }}
+                sx={{ width:"max-content" }}
               >
                 SUBSCRIBE
               </MenuItem>
