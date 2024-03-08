@@ -92,12 +92,11 @@ const Home = () => {
         display: "flex",
         flexDirection: "column",
         backgroundImage: `url(${bg2})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       <Navbar />
-
 
       <Box
         sx={{
@@ -115,7 +114,11 @@ const Home = () => {
             flexDirection: "column",
           }}
         >
-          <Typography mb={2} variant="h5" sx={{fontFamily:"CSGordon",fontWeight:'600'}}>
+          <Typography
+            mb={2}
+            variant="h5"
+            sx={{ fontFamily: "CSGordon", fontWeight: "600" }}
+          >
             CATEGORIES!
           </Typography>
           <Grid container spacing={2}>
@@ -133,12 +136,11 @@ const Home = () => {
                 }}
               >
                 <Box>
-                  <Card 
+                  <Card
                     elevation={3}
-              
-                    sx={{ 
-                      height: {xs:'130',sm:'230px'},
-                      width: {xs:'130',sm:'230px'},
+                    sx={{
+                      height: { xs: "130", sm: "230px" },
+                      width: { xs: "130", sm: "230px" },
                       backgroundColor: "transparent",
                       borderRadius: 2,
                       transition: "transform 0.3s",
@@ -154,20 +156,20 @@ const Home = () => {
                       }
                     }}
                   >
-                    <CardMedia 
+                    <CardMedia
+                      // color="primary"
                       image={item.image}
                       component="img"
                       alt={`Image ${item.id}`}
                       height="100%"
-                      sx={{objectFit:"fill"}}
-                      
+                      sx={{ objectFit: "cover" }}
                     />
                   </Card>
                   <Typography
                     textAlign="center"
                     fontWeight="600"
                     mt={2}
-                    sx={{ textTransform: "uppercase",fontFamily:"CSGordon" }}
+                    sx={{ textTransform: "uppercase", fontFamily: "CSGordon" }}
                   >
                     {item.title}
                   </Typography>

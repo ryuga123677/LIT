@@ -78,94 +78,123 @@ const Navbar = () => {
             alignItems: "center",
             cursor: "pointer",
           }}
-       
         >
-          <img    onClick={() => {
-            navigate("/");
-          }}
+          <img
+            onClick={() => {
+              navigate("/");
+            }}
             src={Logo}
             alt="Logo"
             style={{ height: "50px", marginRight: "10px" }}
           />
-            {isXsScreen && (
-          <Box >
-            <IconButton size="large" onClick={handleNav} color="inherit">
-              <ExpandMoreIcon />
-            </IconButton>
+          {isXsScreen && (
+            <Box>
+              <IconButton size="large" onClick={handleNav} color="inherit">
+                <ExpandMoreIcon />
+              </IconButton>
 
-            <Menu
-              // id="menu-appbar"
-              // anchorOrigin={{
-              //   vertical: "top",
-              //   horizontal: "left",
-              // }}
-              // transformOrigin={{
-              //   vertical: "top",
-              //   horizontal: "left",
-              // }}
-              open={anchorNavopen}
-              onClose={navClose}
-              PaperProps={{
-                sx: {
-                  width: "100vw",
-                  height: "100vh",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems:"center",
-                },
-              }}
-              
-              
-            >
-              <MenuItem
-                onClick={() => {
-                  navigate("/socialspace");
-                  navClose();
+              <Menu
+                // id="menu-appbar"
+                // anchorOrigin={{
+                //   vertical: "top",
+                //   horizontal: "left",
+                // }}
+                // transformOrigin={{
+                //   vertical: "top",
+                //   horizontal: "left",
+                // }}
+                open={anchorNavopen}
+                onClose={navClose}
+                PaperProps={{
+                  sx: {
+                    width: "100vw",
+                    height: "100vh",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  },
                 }}
-                sx={{width:"max-content" }}
               >
-                SOCIAL SPACE
-              </MenuItem>
-              <MenuItem
-                onClick={() => {
-                  navigate("/iricon");
-                  navClose();
-                }}
-                sx={{width:"max-content" }}
-              >
-                IR ICON
-              </MenuItem>
-              <MenuItem
-                onClick={() => {
-                  navigate("/avatarstore");
-                  navClose();
-                }}
-                sx={{width:"max-content" }}
-              >
-                AVATAR STORE
-              </MenuItem>
-              <MenuItem
-                onClick={() => {
-                  navigate("/litstore");
-                  navClose();
-                }}
-                sx={{ width:"max-content" }}
-              >
-                LIT STORE
-              </MenuItem>
-              <MenuItem
-                onClick={() => {
-                  navigate("/subscribe");
-                  navClose();
-                }}
-                sx={{ width:"max-content" }}
-              >
-                SUBSCRIBE
-              </MenuItem>
-            </Menu>
-          </Box>
-        )}
+                <MenuItem
+                  onClick={() => {
+                    navigate("/socialspace");
+                    navClose();
+                  }}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    width: "100%",
+                    fontSize: "3rem",
+                    marginBottom: "3%",
+                  }}   
+                >
+                  SOCIAL SPACE
+                </MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    navigate("/iricon");
+                    navClose();
+                  }}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    width: "100%",
+                    fontSize: "3rem",
+                    marginBottom: "3%",
 
+                  }}                >
+                  IR ICON
+                </MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    navigate("/avatarstore");
+                    navClose();
+                  }}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    width: "100%",
+                    fontSize: "3rem",
+                    marginBottom: "3%",
+
+                  }}                   >
+                  AVATAR STORE
+                </MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    navigate("/litstore");
+                    navClose();
+                  }}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    width: "100%",
+                    fontSize: "3rem",
+                    marginBottom: "3%",
+                  }}                   >
+                  LIT STORE
+                </MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    navigate("/subscribe");
+                    navClose();
+                  }}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    width: "100%",
+                    fontSize: "3rem",
+                  }}                   >
+                  SUBSCRIBE
+                </MenuItem>
+              </Menu>
+            </Box>
+          )}
         </Box>
         {/* <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
           <Typography variant="h5" fontWeight={600}>
@@ -229,7 +258,6 @@ const Navbar = () => {
           </Box>
         )}
 
-      
         {isAuthenticated ? (
           <Box ml={4}>
             <IconButton
