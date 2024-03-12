@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../common/components/Navbar";
-
+import { motion } from "framer-motion";
 import {
   Box,
   Card,
@@ -112,15 +112,26 @@ function MainHome() {
               onClick={() => {
                 navigate("/home");
               }}
+              
               sx={{
                 marginTop: "20px",
 
                 height: "190px",
                 width: "190px",
+                transition: "transform 0.3s",
+                "&:hover": {
+                  transform: "scale(1.05)",
+                },
               }}
               mb={6}
             >
-              <img
+              <motion.img
+                initial={{ x: "-100vw" }}
+                animate={{ x: 0 }}
+                transition={{ duration: 1.5 }}
+              
+               
+                
                 src={Play}
                 style={{ height: "100%", width: "100%", cursor: "pointer" }}
               />
@@ -223,7 +234,7 @@ function MainHome() {
           />
         </Box>
       )}
-     
+
       <Box
         display="flex"
         marginTop="10px"
