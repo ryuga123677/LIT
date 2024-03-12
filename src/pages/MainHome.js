@@ -157,6 +157,7 @@ function MainHome() {
           <Grid container spacing={1} sx={{ justifyContent: "center" }}>
             {imageLinks.map((item) => (
               <Grid
+             
                 item
                 key={item.id}
                 xs={6} // On extra small screens, take up 6 columns (half of the container)
@@ -171,11 +172,15 @@ function MainHome() {
                   flexDirection: "column",
                 }}
               >
-                <Box
+                <motion.Box 
+                 initial={{ x: "100vw" }}
+                 animate={{ x: 0 }}
+                 transition={{ duration: 1.5 }}
                   sx={{
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
+                  
 
                     justifyContent: "center",
                   }}
@@ -195,6 +200,7 @@ function MainHome() {
                     }}
                   >
                     <CardMedia
+                    
                       image={item.image}
                       component="img"
                       alt={`Image ${item.id}`}
@@ -210,7 +216,7 @@ function MainHome() {
                   >
                     {item.title}
                   </Typography>
-                </Box>
+                </motion.Box>
               </Grid>
             ))}
           </Grid>
