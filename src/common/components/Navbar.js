@@ -1,4 +1,5 @@
 import React, { useState, MouseEvent } from "react";
+import {motion} from "framer-motion"
 import {
   AppBar,
   Toolbar,
@@ -88,12 +89,15 @@ const Navbar = () => {
             style={{ height: "50px", marginRight: "10px" }}
           />
           {isXsScreen && (
-            <Box>
+            <motion.Box 
+           
+
+            >
               <IconButton size="large" onClick={handleNav} color="inherit">
                 <ExpandMoreIcon />
               </IconButton>
 
-              <Menu
+              < Menu
                 // id="menu-appbar"
                 // anchorOrigin={{
                 //   vertical: "top",
@@ -103,10 +107,13 @@ const Navbar = () => {
                 //   vertical: "top",
                 //   horizontal: "left",
                 // }}
+               
                 open={anchorNavopen}
                 onClose={navClose}
+                
                 PaperProps={{
                   sx: {
+                    background: "white",
                     width: "100vw",
                     height: "100vh",
                     display: "flex",
@@ -125,9 +132,10 @@ const Navbar = () => {
                     justifyContent: "center",
                     alignItems: "center",
                     width: "100%",
-                    fontSize: "3rem",
+                    fontSize: "1rem",
                     marginBottom: "3%",
-                  }}   
+                  }}  
+                   
                 >
                   SOCIAL SPACE
                 </MenuItem>
@@ -141,7 +149,7 @@ const Navbar = () => {
                     justifyContent: "center",
                     alignItems: "center",
                     width: "100%",
-                    fontSize: "3rem",
+                    fontSize: "1rem",
                     marginBottom: "3%",
 
                   }}                >
@@ -157,7 +165,7 @@ const Navbar = () => {
                     justifyContent: "center",
                     alignItems: "center",
                     width: "100%",
-                    fontSize: "3rem",
+                    fontSize: "1rem",
                     marginBottom: "3%",
 
                   }}                   >
@@ -173,7 +181,7 @@ const Navbar = () => {
                     justifyContent: "center",
                     alignItems: "center",
                     width: "100%",
-                    fontSize: "3rem",
+                    fontSize: "1rem",
                     marginBottom: "3%",
                   }}                   >
                   LIT STORE
@@ -188,12 +196,12 @@ const Navbar = () => {
                     justifyContent: "center",
                     alignItems: "center",
                     width: "100%",
-                    fontSize: "3rem",
+                    fontSize: "1rem",
                   }}                   >
                   SUBSCRIBE
                 </MenuItem>
               </Menu>
-            </Box>
+            </motion.Box>
           )}
         </Box>
         {/* <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>

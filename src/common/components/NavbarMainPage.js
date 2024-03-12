@@ -7,8 +7,9 @@ import {
   Menu,
   MenuItem,
   Box,
+  Link,
   ListItemIcon,
-  useMediaQuery
+  useMediaQuery,
 } from "@mui/material";
 import LoginIcon from "@mui/icons-material/Login";
 import AccountCircle from "@mui/icons-material/AccountCircle";
@@ -51,21 +52,20 @@ const NavbarMainPage = () => {
     >
       <Toolbar
         sx={{
-          
           display: "flex",
           alignItems: "center",
           flexDirection: "row-reverse",
-          justifyContent: "space-between",
+          justifyContent: "",
 
           width: "100%",
         }}
       >
-    
         {/* <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
           <Typography variant="h5" fontWeight={600}>
             Welcome 👋🏻
           </Typography>
         </Box> */}
+      
         {isAuthenticated ? (
           <Box ml={4}>
             <IconButton
@@ -158,29 +158,54 @@ const NavbarMainPage = () => {
               onClick={() => {
                 navigate("/login");
               }}
-            >    <Typography fontFamily="CSGordan">SIGN IN</Typography>
+            >
+              {" "}
+              <Typography fontFamily="CSGordan">SIGN IN</Typography>
               <DensityMediumOutlinedIcon fontSize="small" />
-          
             </IconButton>
-            
           </>
-        )}
-            {!isXsScreen && (<Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            cursor: "pointer",
-          }}
-          onClick={() => {
-            navigate("/");
-          }}
+        )}<Box sx={{
+          width: "100%",
+          display:"flex",
+        flexDirection:"row-reverse",
+        justifyContent:"space-between"
+        }}>
+           <Link marginTop={2}
+          href="https://project-2-seven-beta.vercel.app"
+          target="_blank"
+          rel="noopener"
+          fontFamily="CDGordon"
+          fontWeight={600}
+          fontSize={18}
+          color="inherit"
+          underline="hover"
         >
-          <img
-            src={Logo}
-            alt="Logo"
-            style={{ height: "50px",marginRight: "10px", marginLeft:"10px" }}
-          />
-        </Box>)}
+          NEWSLETTER
+        </Link>
+        {!isXsScreen && (
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              cursor: "pointer",
+            }}
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            <img
+              src={Logo}
+              alt="Logo"
+              style={{
+                height: "50px",
+                marginRight: "10px",
+                marginLeft: "10px",
+              }}
+            />
+          </Box>
+        )}
+        </Box>
+         
       </Toolbar>
     </AppBar>
   );
