@@ -143,6 +143,7 @@ function MainHome() {
                 display: "flex",
                 alignItems: "center",
                 cursor: "pointer",
+                marginTop: "5",
               }}
             >
               <img
@@ -230,7 +231,7 @@ function MainHome() {
         >
           <img
             src={Play}
-            style={{ height: "120px", width: "120px", cursor: "pointer" }}
+            style={{ height: "140px", width: "140px", cursor: "pointer" }}
           />
         </Box>
       )}
