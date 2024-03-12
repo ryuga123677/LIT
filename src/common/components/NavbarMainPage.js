@@ -170,7 +170,7 @@ const NavbarMainPage = () => {
         flexDirection:"row-reverse",
         justifyContent:"space-between"
         }}>
-           <Link marginTop={1}
+           <Link marginTop={2}
           href="https://project-2-seven-beta.vercel.app"
           target="_blank"
           rel="noopener"

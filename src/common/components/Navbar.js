@@ -132,8 +132,8 @@ const Navbar = () => {
                     justifyContent: "center",
                     alignItems: "center",
                     width: "100%",
-                    fontSize: "1rem",
-                    marginBottom: "3%",
+                    fontSize: "2rem",
+                    marginBottom: "5%",
                   }}  
                    
                 >
@@ -149,8 +149,8 @@ const Navbar = () => {
                     justifyContent: "center",
                     alignItems: "center",
                     width: "100%",
-                    fontSize: "1rem",
-                    marginBottom: "3%",
+                    fontSize: "2rem",
+                    marginBottom: "5%",
 
                   }}                >
                   IR ICON
@@ -165,8 +165,8 @@ const Navbar = () => {
                     justifyContent: "center",
                     alignItems: "center",
                     width: "100%",
-                    fontSize: "1rem",
-                    marginBottom: "3%",
+                    fontSize: "2rem",
+                    marginBottom: "5%",
 
                   }}                   >
                   AVATAR STORE
@@ -181,8 +181,8 @@ const Navbar = () => {
                     justifyContent: "center",
                     alignItems: "center",
                     width: "100%",
-                    fontSize: "1rem",
-                    marginBottom: "3%",
+                    fontSize: "2rem",
+                    marginBottom: "5%",
                   }}                   >
                   LIT STORE
                 </MenuItem>
@@ -196,7 +196,7 @@ const Navbar = () => {
                     justifyContent: "center",
                     alignItems: "center",
                     width: "100%",
-                    fontSize: "1rem",
+                    fontSize: "2rem",
                   }}                   >
                   SUBSCRIBE
                 </MenuItem>
