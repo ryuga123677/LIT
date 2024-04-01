@@ -4,7 +4,7 @@ import imgPath from '../common/assets/male.png';
 import imgPath2 from '../common/assets/hair_1.png';
 import imgPath3 from '../common/assets/eye_1.png';
 import imgPath4 from '../common/assets/nose_1.png';
-import imgPath5 from '../common/assets/mouth_1.png';
+import imgPath5 from '../common/assets/mouth_2.png';
 import imgPath6 from '../common/assets/shirt_1.png';
 import imgPath7 from '../common/assets/pant_1.png';
 import imgPath8 from '../common/assets/hair_2.png';
@@ -41,17 +41,19 @@ const Avatar = () => {
     const setupSketch = (p) => {
       try {
         p.setup = () => {
-          p.createCanvas(900, 800);
-          if (imgRef.current) {
-            p.image(imgRef.current, 500, 140, 500, 700);
-            p.image(imgRef2.current, 694, 114, 100, 110);
-            p.image(imgRef3.current, 708, 185, 60, 32);
-            p.image(imgRef4.current, 728, 200, 20, 30);
-            p.image(imgRef5.current, 722, 224, 30, 20);
-            p.image(imgRef7.current, 649, 415, 194, 150);
-            p.image(imgRef6.current, 625, 243, 230, 240);
-          }
+          const canvasWidth = canvasRef.current.offsetWidth;
+          const canvasHeight = canvasRef.current.offsetHeight;
+          p.createCanvas(canvasWidth, canvasHeight);
         };
+        p.draw=()=>{
+          p.image(imgRef.current, 600, 140, 200, 500);
+          p.image(imgRef8.current, 655, 120, 65, 60);
+          p.image(imgRef3.current, 667, 150, 45, 30);
+          p.image(imgRef4.current, 685, 165, 10, 20);
+          p.image(imgRef5.current, 679, 183, 22, 15);
+          p.image(imgRef7.current, 621, 335, 152, 107);
+          p.image(imgRef6.current, 600, 197, 184, 185);
+        }
       } catch (error) {
         console.error('Error setting up sketch:', error);
       }
@@ -74,12 +76,12 @@ const Avatar = () => {
   }, [hairImage]);
 
   const handleChange = () => {
-    imgRef2.current=imgRef8.current; 
+    setHairImage(imgPath8); // Change to the new hair image path
   };
 
   return (
     <>
-      <div ref={canvasRef}></div>
+      <div ref={canvasRef} style={{ width: '100%', height: '100vh' }}></div>
       <button onClick={handleChange}>Change Hair</button>
     </>
   );
