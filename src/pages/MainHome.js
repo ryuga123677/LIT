@@ -48,7 +48,7 @@ function MainHome() {
     {
       id: 5,
       image: Avatar,
-      link: "/",
+      link: "/avatar",
       title: "Avatar store",
       quote: "Give a girl the right shoes, and she can conquer the world.",
     },
@@ -112,7 +112,6 @@ function MainHome() {
               onClick={() => {
                 navigate("/home");
               }}
-              
               sx={{
                 marginTop: "20px",
 
@@ -129,9 +128,6 @@ function MainHome() {
                 initial={{ x: "-100vw" }}
                 animate={{ x: 0 }}
                 transition={{ duration: 1.5 }}
-              
-               
-                
                 src={Play}
                 style={{ height: "100%", width: "100%", cursor: "pointer" }}
               />
@@ -157,7 +153,6 @@ function MainHome() {
           <Grid container spacing={1} sx={{ justifyContent: "center" }}>
             {imageLinks.map((item) => (
               <Grid
-             
                 item
                 key={item.id}
                 xs={6} // On extra small screens, take up 6 columns (half of the container)
@@ -172,15 +167,14 @@ function MainHome() {
                   flexDirection: "column",
                 }}
               >
-                <motion.Box 
-                 initial={{ x: "100vw" }}
-                 animate={{ x: 0 }}
-                 transition={{ duration: 1.5 }}
+                <motion.Box
+                  initial={{ x: "100vw" }}
+                  animate={{ x: 0 }}
+                  transition={{ duration: 1.5 }}
                   sx={{
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
-                  
 
                     justifyContent: "center",
                   }}
@@ -198,9 +192,11 @@ function MainHome() {
                         transform: "scale(1.05)",
                       },
                     }}
+                    onClick={() => {
+                      navigate(item.link);
+                    }}
                   >
                     <CardMedia
-                    
                       image={item.image}
                       component="img"
                       alt={`Image ${item.id}`}
