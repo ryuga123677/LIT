@@ -17,6 +17,7 @@ import Watch from "./pages/Watch";
 import { DbProvider } from "./common/context/DbContext";
 import MarketPlace from "./pages/MarketPlace";
 import MainHome from "./pages/MainHome";
+import Avatar from "./pages/Avatar";
 
 const theme = createTheme({
   typography: {
@@ -46,6 +47,7 @@ function App() {
 
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
+                <Route path="/avatar" element={<Avatar />} />
               </Routes>
             </BrowserRouter>
           </DbProvider>
