@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *,
 *::after,
 *::before {
@@ -6,8 +10,7 @@
   box-sizing: border-box;
 }
 
-
-.App {
+ .App {
   background-color: #010014;
   color: #dcf2f1;
   font-family: 'arcade';

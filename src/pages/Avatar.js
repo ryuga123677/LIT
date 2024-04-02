@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import p5 from "p5";
+import { useNavigate } from "react-router-dom";
+
 import imgPath from "../common/assets/male.png";
 import imgPath2 from "../common/assets/hair_1.png";
 import imgPath3 from "../common/assets/eye_1.png";
@@ -10,6 +12,7 @@ import imgPath7 from "../common/assets/pant_1.png";
 import imgPath8 from "../common/assets/hair_2.png";
 
 const Avatar = () => {
+  const navigate = useNavigate();
   const canvasRef = useRef(null);
   const [hairImage, setHairImage] = useState(imgPath2);
   const [hairPosition, setHairPosition] = useState({ x: 155, y: 115 });
@@ -92,6 +95,15 @@ const Avatar = () => {
 
   return (
     <>
+      <div className="bg-orange-300 flex flex-row justify-end items-end ">
+        <button
+          onClick={() => {
+            navigate("/avatarfemale");
+          }}
+        >
+          female
+        </button>
+      </div>
       <div ref={canvasRef} style={{ width: "100%", height: "100vh" }}></div>
       <button onClick={() => handleChange(imgPath2, 155, 115, 80, 65)}>
         <img src={imgPath2} height="100px" width="100px" />

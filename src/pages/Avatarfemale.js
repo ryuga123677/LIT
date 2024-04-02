@@ -3,31 +3,39 @@ import React, { useEffect, useRef, useState } from "react";
 import p5 from "p5";
 import imgPath from "../common/assets/Avatar/femalechar/female.png";
 import imgPath2 from "../common/assets/Avatar/femalechar/femalehair.png";
+import imgPath22 from "../common/assets/Avatar/femalechar/femalehair2.png";
+import imgPath23 from "../common/assets/Avatar/femalechar/femalehair3.png";
+import imgPath24 from "../common/assets/Avatar/femalechar/femalehair4.png";
+import imgPath25 from "../common/assets/Avatar/femalechar/femalehair5.png";
+import imgPath26 from "../common/assets/Avatar/femalechar/femalehair6.png";
 import imgPath3 from "../common/assets/Avatar/femalechar/femaleEye.png";
 import imgPath4 from "../common/assets/Avatar/femalechar/femalenose.png";
 import imgPath5 from "../common/assets/Avatar/femalechar/femalemouth2.png";
-import imgPath6 from "../common/assets/shirt_1.png";
-import imgPath7 from "../common/assets/pant_1.png";
-import imgPath8 from "../common/assets/hair_2.png";
+import { useNavigate } from "react-router-dom";
+// import imgPath6 from "../common/assets/shirt_1.png";
+// import imgPath7 from "../common/assets/pant_1.png";
+// import imgPath8 from "../common/assets/hair_2.png";
 
 const Avatarfemale = () => {
+  const navigate = useNavigate();
   const canvasRef = useRef(null);
-//   const [hairImage, setHairImage] = useState(imgPath2);
+  const [hairImage, setHairImage] = useState(imgPath26);
+  const [hairPosition, setHairPosition] = useState({ x: 291, y: 33 });
+  const [hairScale, setHairScale] = useState({ width: 92, height: 175 });
   const imgRef = useRef(null);
   const imgRef2 = useRef(null);
   const imgRef3 = useRef(null);
   const imgRef4 = useRef(null);
   const imgRef5 = useRef(null);
-  const imgRef6 = useRef(null);
-  const imgRef7 = useRef(null);
-  const imgRef8 = useRef(null);
+  const imgRef22 = useRef(null);
   const myP5Ref = useRef(null);
 
   useEffect(() => {
     const preloadImage = (p) => {
       try {
         imgRef.current = p.loadImage(imgPath);
-        imgRef2.current = p.loadImage(imgPath2);
+        imgRef2.current = p.loadImage(hairImage);
+        imgRef22.current = p.loadImage(imgPath22);
         imgRef3.current = p.loadImage(imgPath3);
         imgRef4.current = p.loadImage(imgPath4);
         imgRef5.current = p.loadImage(imgPath5);
@@ -42,19 +50,27 @@ const Avatarfemale = () => {
     const setupSketch = (p) => {
       try {
         p.setup = () => {
-          p.createCanvas(window.innerWidth, window.innerHeight);
-          //   p.createCanvas();
+          const canvasWidth = canvasRef.current.offsetWidth;
+          const canvasHeight = canvasRef.current.offsetHeight;
+          p.createCanvas(canvasWidth / 2, canvasHeight);
+          // p.background(255, 255, 255);
         };
 
         p.draw = () => {
-          p.background(0);
+          p.background(255);
           if (imgRef.current) {
-            p.image(imgRef.current, 450, 120, 600, 600);
-            
-            p.image(imgRef3.current, 715, 154, 43, 15);
-            p.image(imgRef2.current, 699, 110, 78, 140);
-            p.image(imgRef4.current, 731, 162, 13, 25);
-            p.image(imgRef5.current, 727, 184, 20, 15);
+            p.image(imgRef.current, 100, 40, 500, 630);
+
+            p.image(imgRef3.current, 317, 82, 43, 15);
+            p.image(
+              imgRef2.current,
+              hairPosition.x,
+              hairPosition.y,
+              hairScale.width,
+              hairScale.height
+            );
+            p.image(imgRef4.current, 332, 90, 13, 25);
+            p.image(imgRef5.current, 328, 110, 20, 15);
             // p.image(imgRef7.current, 649, 415, 194, 150);
             // p.image(imgRef6.current, 625, 243, 230, 240);
           }
@@ -78,12 +94,48 @@ const Avatarfemale = () => {
         console.error("Error removing p5.js sketch:", error);
       }
     };
-  }, []);
+  }, [hairImage, hairPosition, hairScale]);
 
+  const handleChange = (newHairImage, newX, newY, newWidth, newHeight) => {
+    setHairImage(newHairImage);
+    setHairPosition({ x: newX, y: newY });
+    setHairScale({ width: newWidth, height: newHeight });
+  };
   return (
-    <div>
-      <div ref={canvasRef}></div>
-    </div>
+    <>
+      <div className="bg-orange-300 flex flex-row justify-end items-end ">
+        <button
+          onClick={() => {
+            navigate("/avatar");
+          }}
+        >
+          Male
+        </button>
+      </div>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <div ref={canvasRef} style={{ width: "100%", height: "100vh" }}></div>
+
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <button onClick={() => handleChange(imgPath2, 303, 37, 72, 140)}>
+              <img src={imgPath2} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChange(imgPath22, 293, 20, 84, 165)}>
+              <img src={imgPath22} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChange(imgPath23, 298, 20, 75, 100)}>
+              <img src={imgPath23} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChange(imgPath24, 294, 33, 97, 180)}>
+              <img src={imgPath24} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChange(imgPath26, 291, 33, 92, 175)}>
+              <img src={imgPath26} height="100px" width="100px" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
