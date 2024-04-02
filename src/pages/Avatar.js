@@ -45,7 +45,7 @@ const Avatar = () => {
         p.setup = () => {
           const canvasWidth = canvasRef.current.offsetWidth;
           const canvasHeight = canvasRef.current.offsetHeight;
-          p.createCanvas(canvasWidth / 2, canvasHeight);
+          p.createCanvas(canvasWidth , canvasHeight);
           p.background(255, 255, 255);
         };
         p.draw = () => {
