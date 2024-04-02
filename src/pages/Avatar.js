@@ -12,6 +12,8 @@ import imgPath8 from '../common/assets/hair_2.png';
 const Avatar = () => {
   const canvasRef = useRef(null);
   const [hairImage, setHairImage] = useState(imgPath2);
+  const [hairPosition, setHairPosition] = useState({ x: 655 - 300, y: 120 });
+  const [hairScale, setHairScale] = useState({ width: 65, height: 60 });
   const imgRef = useRef(null);
   const imgRef2 = useRef(null);
   const imgRef3 = useRef(null);
@@ -43,17 +45,24 @@ const Avatar = () => {
         p.setup = () => {
           const canvasWidth = canvasRef.current.offsetWidth;
           const canvasHeight = canvasRef.current.offsetHeight;
-          p.createCanvas(canvasWidth, canvasHeight);
+          p.createCanvas(canvasWidth / 2, canvasHeight);
+          p.background(255, 255, 255);
         };
-        p.draw=()=>{
-          p.image(imgRef.current, 600, 140, 200, 500);
-          p.image(imgRef8.current, 655, 120, 65, 60);
-          p.image(imgRef3.current, 667, 150, 45, 30);
-          p.image(imgRef4.current, 685, 165, 10, 20);
-          p.image(imgRef5.current, 679, 183, 22, 15);
-          p.image(imgRef7.current, 621, 335, 152, 107);
-          p.image(imgRef6.current, 600, 197, 184, 185);
-        }
+        p.draw = () => {
+          p.image(imgRef.current, 600 - 300, 140, 200, 500);
+          p.image(
+            imgRef2.current,
+            hairPosition.x,
+            hairPosition.y,
+            hairScale.width,
+            hairScale.height
+          );
+          p.image(imgRef3.current, 667 - 300, 150, 45, 30);
+          p.image(imgRef4.current, 685 - 300, 165, 10, 20);
+          p.image(imgRef5.current, 679 - 300, 183, 22, 15);
+          p.image(imgRef7.current, 621 - 300, 335, 152, 107);
+          p.image(imgRef6.current, 600 - 300, 197, 184, 185);
+        };
       } catch (error) {
         console.error('Error setting up sketch:', error);
       }
@@ -73,16 +82,19 @@ const Avatar = () => {
         console.error('Error removing p5.js sketch:', error);
       }
     };
-  }, [hairImage]);
+  }, [hairImage, hairPosition, hairScale]);
 
-  const handleChange = () => {
-    setHairImage(imgPath8); // Change to the new hair image path
+  const handleChange = (newHairImage, newX, newY, newWidth, newHeight) => {
+    setHairImage(newHairImage);
+    setHairPosition({ x: newX, y: newY });
+    setHairScale({ width: newWidth, height: newHeight });
   };
 
   return (
     <>
       <div ref={canvasRef} style={{ width: '100%', height: '100vh' }}></div>
-      <button onClick={handleChange}>Change Hair</button>
+      <button onClick={() => handleChange(imgPath2, 355 , 115, 80, 65)}>Hair 1</button>
+      <button onClick={() => handleChange(imgPath8, 355 , 120, 65, 60)}>Hair 2</button>
     </>
   );
 };
