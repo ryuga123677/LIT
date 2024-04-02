@@ -1,18 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
-
 import p5 from "p5";
 import imgPath from "../common/assets/male.png";
 import imgPath2 from "../common/assets/hair_1.png";
 import imgPath3 from "../common/assets/eye_1.png";
 import imgPath4 from "../common/assets/nose_1.png";
-import imgPath5 from "../common/assets/mouth_1.png";
+import imgPath5 from "../common/assets/mouth_2.png";
 import imgPath6 from "../common/assets/shirt_1.png";
 import imgPath7 from "../common/assets/pant_1.png";
 import imgPath8 from "../common/assets/hair_2.png";
 
-const  Avatar = () => {
+const Avatar = () => {
   const canvasRef = useRef(null);
   const [hairImage, setHairImage] = useState(imgPath2);
+  const [hairPosition, setHairPosition] = useState({ x: 155, y: 115 });
+  const [hairScale, setHairScale] = useState({ width: 80, height: 60 });
   const imgRef = useRef(null);
   const imgRef2 = useRef(null);
   const imgRef3 = useRef(null);
@@ -42,21 +43,25 @@ const  Avatar = () => {
     const setupSketch = (p) => {
       try {
         p.setup = () => {
-          p.createCanvas(900, 800);
-          // p.createCanvas(450,200); 
+          const canvasWidth = canvasRef.current.offsetWidth;
+          const canvasHeight = canvasRef.current.offsetHeight;
+          p.createCanvas(canvasWidth, canvasHeight);
+          p.background(255, 255, 255);
         };
-
         p.draw = () => {
-          p.background(255, 230, 120);
-          if (imgRef.current) {
-            p.image(imgRef.current, 500, 140, 500, 700);
-            p.image(imgRef2.current, 694, 114, 100, 110);
-            p.image(imgRef3.current, 708, 185, 60, 32);
-            p.image(imgRef4.current, 728, 200, 20, 30);
-            p.image(imgRef5.current, 722, 224, 30, 20);
-            p.image(imgRef7.current, 649, 415, 194, 150);
-            p.image(imgRef6.current, 625, 243, 230, 240);
-          }
+          p.image(imgRef.current, 100, 140, 200, 500);
+          p.image(
+            imgRef2.current,
+            hairPosition.x,
+            hairPosition.y,
+            hairScale.width,
+            hairScale.height
+          );
+          p.image(imgRef3.current, 167, 150, 45, 30);
+          p.image(imgRef4.current, 185, 165, 10, 20);
+          p.image(imgRef5.current, 179, 183, 22, 15);
+          p.image(imgRef7.current, 121, 335, 152, 107);
+          p.image(imgRef6.current, 100, 197, 184, 185);
         };
       } catch (error) {
         console.error("Error setting up sketch:", error);
@@ -77,17 +82,23 @@ const  Avatar = () => {
         console.error("Error removing p5.js sketch:", error);
       }
     };
-  }, [hairImage]);
+  }, [hairImage, hairPosition, hairScale]);
 
-  const handleChange = () => {
-    imgRef2.current = imgRef8.current;
-    console.log("hellow");
+  const handleChange = (newHairImage, newX, newY, newWidth, newHeight) => {
+    setHairImage(newHairImage);
+    setHairPosition({ x: newX, y: newY });
+    setHairScale({ width: newWidth, height: newHeight });
   };
 
   return (
     <>
-      <div ref={canvasRef}></div>
-      <button onClick={handleChange}>Change Hair</button>
+      <div ref={canvasRef} style={{ width: "100%", height: "100vh" }}></div>
+      <button onClick={() => handleChange(imgPath2, 155, 115, 80, 65)}>
+        <img src={imgPath2} height="100px" width="100px" />
+      </button>
+      <button onClick={() => handleChange(imgPath8, 155, 120, 65, 60)}>
+        <img src={imgPath8} height="100px" width="100px" />
+      </button>
     </>
   );
 };
