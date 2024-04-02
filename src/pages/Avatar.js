@@ -93,8 +93,8 @@ const Avatar = () => {
   return (
     <>
       <div ref={canvasRef} style={{ width: '100%', height: '100vh' }}></div>
-      <button onClick={() => handleChange(imgPath2, 155 , 115, 80, 65)}>Hair 1</button>
-      <button onClick={() => handleChange(imgPath8, 155 , 120, 65, 60)}>Hair 2</button>
+      <button onClick={() => handleChange(imgPath2, 155 , 115, 80, 65)}><img src={imgPath2} height="100px" width="100px"/></button>
+      <button onClick={() => handleChange(imgPath8, 155 , 120, 65, 60)}><img src={imgPath8} height="100px" width="100px"/></button>
     </>
   );
 };
