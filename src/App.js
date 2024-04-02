@@ -18,6 +18,7 @@ import { DbProvider } from "./common/context/DbContext";
 import MarketPlace from "./pages/MarketPlace";
 import MainHome from "./pages/MainHome";
 import Avatar from "./pages/Avatar";
+import Avatarfemale from "./pages/Avatarfemale";
 
 const theme = createTheme({
   typography: {
@@ -48,6 +49,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/avatar" element={<Avatar />} />
+                <Route path="/avatarfemale" element={<Avatarfemale />} />
               </Routes>
             </BrowserRouter>
           </DbProvider>
