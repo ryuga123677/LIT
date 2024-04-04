@@ -9,6 +9,10 @@ import imgPath24 from "../common/assets/Avatar/femalechar/femalehair4.png";
 import imgPath25 from "../common/assets/Avatar/femalechar/femalehair5.png";
 import imgPath26 from "../common/assets/Avatar/femalechar/femalehair6.png";
 import imgPath3 from "../common/assets/Avatar/femalechar/femaleEye.png";
+import imgPath32 from "../common/assets/Avatar/femalechar/femaleEye2.png";
+import imgPath33 from "../common/assets/Avatar/femalechar/femaleEye3.png";
+import imgPath34 from "../common/assets/Avatar/femalechar/femaleEye4.png";
+import imgPath35 from "../common/assets/Avatar/femalechar/femaleEye5.png";
 import imgPath4 from "../common/assets/Avatar/femalechar/femalenose.png";
 import imgPath5 from "../common/assets/Avatar/femalechar/femalemouth2.png";
 import { useNavigate } from "react-router-dom";
@@ -22,6 +26,10 @@ const Avatarfemale = () => {
   const [hairImage, setHairImage] = useState(imgPath26);
   const [hairPosition, setHairPosition] = useState({ x: 291, y: 33 });
   const [hairScale, setHairScale] = useState({ width: 92, height: 175 });
+
+  const [eyeImage, setEyeImage] = useState(imgPath35);
+  const [eyePosition, setEyePosition] = useState({ x: 318, y: 81 });
+  const [eyeScale, setEyeScale] = useState({ width: 40, height: 14 });
   const imgRef = useRef(null);
   const imgRef2 = useRef(null);
   const imgRef3 = useRef(null);
@@ -35,8 +43,8 @@ const Avatarfemale = () => {
       try {
         imgRef.current = p.loadImage(imgPath);
         imgRef2.current = p.loadImage(hairImage);
-        imgRef22.current = p.loadImage(imgPath22);
-        imgRef3.current = p.loadImage(imgPath3);
+        // imgRef22.current = p.loadImage(imgPath22);
+        imgRef3.current = p.loadImage(eyeImage);
         imgRef4.current = p.loadImage(imgPath4);
         imgRef5.current = p.loadImage(imgPath5);
         // imgRef6.current = p.loadImage(imgPath6);
@@ -61,7 +69,13 @@ const Avatarfemale = () => {
           if (imgRef.current) {
             p.image(imgRef.current, 100, 40, 500, 630);
 
-            p.image(imgRef3.current, 317, 82, 43, 15);
+            p.image(
+              imgRef3.current,
+              eyePosition.x,
+              eyePosition.y,
+              eyeScale.width,
+              eyeScale.height
+            );
             p.image(
               imgRef2.current,
               hairPosition.x,
@@ -94,12 +108,17 @@ const Avatarfemale = () => {
         console.error("Error removing p5.js sketch:", error);
       }
     };
-  }, [hairImage, hairPosition, hairScale]);
+  }, [hairImage, hairPosition, hairScale, eyeImage, eyePosition, eyeScale]);
 
   const handleChange = (newHairImage, newX, newY, newWidth, newHeight) => {
     setHairImage(newHairImage);
     setHairPosition({ x: newX, y: newY });
     setHairScale({ width: newWidth, height: newHeight });
+  };
+  const handleChangeEye = (newEyeImage, newX, newY, newWidth, newHeight) => {
+    setEyeImage(newEyeImage);
+    setEyePosition({ x: newX, y: newY });
+    setEyeScale({ width: newWidth, height: newHeight });
   };
   return (
     <>
@@ -116,6 +135,7 @@ const Avatarfemale = () => {
         <div ref={canvasRef} style={{ width: "100%", height: "100vh" }}></div>
 
         <div style={{ display: "flex", flexDirection: "row" }}>
+          {/* for hair */}
           <div style={{ display: "flex", flexDirection: "column" }}>
             <button onClick={() => handleChange(imgPath2, 303, 37, 72, 140)}>
               <img src={imgPath2} height="100px" width="100px" />
@@ -131,6 +151,24 @@ const Avatarfemale = () => {
             </button>
             <button onClick={() => handleChange(imgPath26, 291, 33, 92, 175)}>
               <img src={imgPath26} height="100px" width="100px" />
+            </button>
+          </div>
+          {/* for Eye  */}
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <button onClick={() => handleChangeEye(imgPath3, 321, 82, 35, 15)}>
+              <img src={imgPath3} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChangeEye(imgPath32, 316, 82, 43, 15)}>
+              <img src={imgPath32} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChangeEye(imgPath33, 318, 81, 40, 15)}>
+              <img src={imgPath33} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChangeEye(imgPath34, 318, 81, 40, 15)}>
+              <img src={imgPath34} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChangeEye(imgPath35, 318, 81, 40, 14)}>
+              <img src={imgPath35} height="100px" width="100px" />
             </button>
           </div>
         </div>
