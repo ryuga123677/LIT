@@ -20,7 +20,8 @@ import MainHome from "./pages/MainHome";
 import Avatar from "./pages/Avatar";
 import Avatarfemale from "./pages/Avatarfemale";
 import AvatarSelection from "./pages/AvatarSelection";
-import  MenAvatar1  from "./pages/MenAvatar1";
+import MenAvatar1 from "./pages/MenAvatar1";
+import FemaleAvatar1 from "./pages/Female1";
 
 const theme = createTheme({
   typography: {
@@ -53,6 +54,7 @@ function App() {
                 <Route path="/avatar" element={<AvatarSelection />} />
                 <Route path="/avatarfemale" element={<Avatarfemale />} />
                 <Route path="/menavatar1" element={<MenAvatar1 />} />
+                <Route path="/femaleavatar1" element={<FemaleAvatar1 />} />
               </Routes>
             </BrowserRouter>
           </DbProvider>
