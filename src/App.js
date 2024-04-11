@@ -19,6 +19,8 @@ import MarketPlace from "./pages/MarketPlace";
 import MainHome from "./pages/MainHome";
 import Avatar from "./pages/Avatar";
 import Avatarfemale from "./pages/Avatarfemale";
+import AvatarSelection from "./pages/AvatarSelection";
+import  MenAvatar1  from "./pages/MenAvatar1";
 
 const theme = createTheme({
   typography: {
@@ -48,8 +50,9 @@ function App() {
 
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
-                <Route path="/avatar" element={<Avatar />} />
+                <Route path="/avatar" element={<AvatarSelection />} />
                 <Route path="/avatarfemale" element={<Avatarfemale />} />
+                <Route path="/menavatar1" element={<MenAvatar1 />} />
               </Routes>
             </BrowserRouter>
           </DbProvider>

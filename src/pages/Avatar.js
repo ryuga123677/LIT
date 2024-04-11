@@ -44,6 +44,7 @@ const Avatar = () => {
   const myP5Ref = useRef(null);
 
   useEffect(() => {
+    console.log('hello');
     const preloadImage = (p) => {
       try {
         imgRef.current = p.loadImage(imgPath);
