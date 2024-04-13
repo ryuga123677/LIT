@@ -20,7 +20,7 @@ const navigate=useNavigate();
         </div>
         <div style={{ display: "flex", flexDirection: "row",justifyContent:"center" ,alignContent:"center", flexWrap: "wrap",height:"100%",width:"100%",}}>
           <img src={femaleImg1} alt="Female Avatar 1" style={{ width: "33%",height:"100%" }} />
-          <img src={femaleImg2} alt="Female Avatar 2" style={{ width: "33%",height:"100%" }} />
+          <img onClick={()=>navigate('/femaleavatar2')} src={femaleImg2} alt="Female Avatar 2" style={{ width: "33%",height:"100%" }} />
           <img src={femaleImg3} alt="Female Avatar 3" style={{ width: "33%",height:"100%" }} />
         </div>
       </div>
