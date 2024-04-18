@@ -17,6 +17,7 @@ import pant4 from "../common/assets/Avatar/malechar/pants/pant4.png";
 import pant5 from "../common/assets/Avatar/malechar/pants/pant5.png";
 import pant6 from "../common/assets/Avatar/malechar/pants/pant6.png";
 import pant7 from "../common/assets/Avatar/malechar/pants/pant7.png";
+import bg from "../common/assets/bg.jpg"
 
 const MenAvatar1 = () => {
   const navigate = useNavigate();
@@ -25,10 +26,11 @@ const MenAvatar1 = () => {
    const [pantImage, setPantImage] = useState(pant3);
 
 
-   const [shirtPosition, setShirtPosition] = useState({ x: 205, y: 75});
-  const [shirtScale, setShirtScale] = useState({ width: 270, height: 300 });
-  const [pantPosition, setPantPosition] = useState({ x: 187, y: 240});
-  const [pantScale, setPantScale] = useState({ width: 300, height: 420});
+   const [shirtPosition, setShirtPosition] = useState({ x: 197, y: 81});
+  const [shirtScale, setShirtScale] = useState({ width: 240, height: 270 });
+
+  const [pantPosition, setPantPosition] = useState({ x: 187, y: 215});
+  const [pantScale, setPantScale] = useState({ width: 260, height: 400});
 
   const imgRef = useRef(null);
   const shirtref1 = useRef(null);
@@ -46,6 +48,7 @@ const MenAvatar1 = () => {
   const pantref5= useRef(null); 
   const pantref6= useRef(null); 
   const pantref7= useRef(null); 
+  const background = useRef(null);
 
   const myP5Ref = useRef(null);
 
@@ -56,6 +59,7 @@ const MenAvatar1 = () => {
         imgRef.current = p.loadImage(imgPath1);
         shirtref1.current = p.loadImage(shirtImage);
         pantref1.current = p.loadImage(pantImage);
+        background.current = p.loadImage(bg);
  
       } catch (error) {
         console.error("Error loading image:", error);
@@ -68,13 +72,16 @@ const MenAvatar1 = () => {
           const canvasWidth = canvasRef.current.offsetWidth;
           const canvasHeight = canvasRef.current.offsetHeight;
           p.createCanvas(canvasWidth , canvasHeight);
-          p.background(255, 255, 255);
+          
+         
         };
         p.draw = () => {
-          p.image(imgRef.current, 84, 0, 505, 700);
+        
+          // p.background(background.current);
+          p.image(imgRef.current, 89, 20, 450, 640);
           p.image(shirtref1.current , shirtPosition.x, shirtPosition.y, shirtScale.width,shirtScale.height );
           p.image(pantref1.current , pantPosition.x, pantPosition.y, pantScale.width,pantScale.height );
-
+    
         };
       } catch (error) {
         console.error("Error setting up sketch:", error);
@@ -133,43 +140,49 @@ return (
       <div ref={canvasRef} style={{ width: "50%" }}></div>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <div style={{ display: "flex", flexDirection: "row" , overflowX: "auto", maxWidth: "400px"}}>
-          <button onClick={() => handleChangeshirt(shirt1, 155, 115, 80, 65)}>
+          <button onClick={() => handleChangeshirt(shirt1, 217, 95, 190, 250)}>
             <img src={shirt1} height="100px" width="100px" />
           </button>
-          <button onClick={() => handleChangeshirt(shirt2, 155, 115, 80, 65)}>
+          <button onClick={() => handleChangeshirt(shirt2, 220, 94, 190, 250)}>
             <img src={shirt2} height="100px" width="100px" />
           </button>
-          <button onClick={() => handleChangeshirt(shirt3, 155, 120, 65, 60)}>
+          <button onClick={() => handleChangeshirt(shirt3, 225, 100, 180, 270)}>
             <img src={shirt3} height="100px" width="100px" />
           </button>
-          <button onClick={() => handleChangeshirt(shirt4, 155, 110, 67, 67)}>
+          <button onClick={() => handleChangeshirt(shirt4, 205, 75, 270, 300)}>
             <img src={shirt4} height="100px" width="100px" />
           </button>
-          <button onClick={() => handleChangeshirt(shirt5, 155, 115, 70, 65)}>
+          <button onClick={() => handleChangeshirt(shirt5, 192, 61, 238, 260)}>
             <img src={shirt5} height="100px" width="100px" />
+          </button>
+          <button onClick={() => handleChangeshirt(shirt6, 205, 75, 270, 300)}>
+            <img src={shirt6} height="100px" width="100px" />
+          </button>
+          <button onClick={() => handleChangeshirt(shirt7, 197, 81, 240, 270)}>
+            <img src={shirt7} height="100px" width="100px" />
           </button>
         
         </div>
         <div style={{ display: "flex", flexDirection: "row", overflowX: "auto", maxWidth: "400px" }}>
-          <button onClick={() => handleChangepant(pant1, 185, 25, 80, 65)}>
+          <button onClick={() => handleChangepant(pant1, 145, 245,341, 410)}>
             <img src={pant1} height="100px" width="100px" />
           </button>
-          <button onClick={() => handleChangepant(pant2, 155, 115, 80, 65)}>
+          <button onClick={() => handleChangepant(pant2, 185, 282, 260, 330)}>
             <img src={pant2} height="100px" width="100px" />
           </button>
-          <button onClick={() => handleChangepant(pant3, 155, 120, 65, 60)}>
+          <button onClick={() => handleChangepant(pant3, 187, 215, 260, 400)}>
             <img src={pant3} height="100px" width="100px" />
           </button>
-          <button onClick={() => handleChangepant(pant4, 155, 115, 80, 65)}>
+          <button onClick={() => handleChangepant(pant4, 40, 260, 550, 390)}>
             <img src={pant4} height="100px" width="100px" />
           </button>
-          <button onClick={() => handleChangepant(pant5, 155, 115, 80, 65)}>
+          <button onClick={() => handleChangepant(pant5,185, 235, 265, 390)}>
             <img src={pant5} height="100px" width="100px" />
           </button>
-          <button onClick={() => handleChangepant(pant6, 155, 120, 65, 60)}>
+          <button onClick={() => handleChangepant(pant6,189, 265, 260, 360)}>
             <img src={pant6} height="100px" width="100px" />
           </button>
-          <button onClick={() => handleChangepant(pant7, 155, 120, 65, 60)}>
+          <button onClick={() => handleChangepant(pant7, 187, 240, 300, 420)}>
             <img src={pant7} height="100px" width="100px" />
           </button>
     
