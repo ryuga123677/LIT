@@ -52,9 +52,9 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/avatar" element={<AvatarSelection />} />
-                <Route path="/femaleavatar2" element={<Avatarfemale />} />
+
                 <Route path="/menavatar1" element={<MenAvatar1 />} />
-                <Route path="/femaleavatar1" element={<FemaleAvatar1 />} />
+                <Route path="/femaleavatar2" element={<FemaleAvatar1 />} />
               </Routes>
             </BrowserRouter>
           </DbProvider>
