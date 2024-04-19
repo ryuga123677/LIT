@@ -20,14 +20,19 @@ import pant7 from "../common/assets/Avatar/malechar/pants/pant7.png";
 import bg from "../common/assets/bg.jpg"
 
 const MenAvatar1 = () => {
+  
   const navigate = useNavigate();
   const canvasRef = useRef(null);
    const [shirtImage, setShirtImage] = useState(shirt7);
    const [pantImage, setPantImage] = useState(pant3);
+   const [value1, setValue1] = useState(50);
+   const [value2, setValue2] = useState(50);
+   const [value3, setValue3] = useState(50);
+   const [value4, setValue4] = useState(50);
+ 
 
-
-   const [shirtPosition, setShirtPosition] = useState({ x: 197, y: 81});
-  const [shirtScale, setShirtScale] = useState({ width: 240, height: 270 });
+   const [shirtPosition, setShirtPosition] = useState({ x: value1, y: value2});
+  const [shirtScale, setShirtScale] = useState({ width: value3, height: value4 });
 
   const [pantPosition, setPantPosition] = useState({ x: 187, y: 215});
   const [pantScale, setPantScale] = useState({ width: 260, height: 400});
@@ -51,6 +56,27 @@ const MenAvatar1 = () => {
   const background = useRef(null);
 
   const myP5Ref = useRef(null);
+ 
+  const handleSliderChange1 = (event) => {
+    setValue1(event.target.value);
+    setShirtPosition((prevState) => ({ ...prevState, x: event.target.value }));
+  };
+  
+  const handleSliderChange2 = (event) => {
+    setValue2(event.target.value);
+    setShirtPosition((prevState) => ({ ...prevState, y: event.target.value }));
+  };
+  
+  const handleSliderChange3 = (event) => {
+    setValue3(event.target.value);
+    setShirtScale((prevState) => ({ ...prevState, width: event.target.value }));
+  };
+  
+  const handleSliderChange4 = (event) => {
+    setValue4(event.target.value);
+    setShirtScale((prevState) => ({ ...prevState, height: event.target.value }));
+  };
+  
 
   useEffect(() => {
     
@@ -109,6 +135,10 @@ const MenAvatar1 = () => {
     pantImage,
     pantPosition,
     pantScale,
+    value1,
+    value2,
+    value3,
+    value4
     
   ]);
 
@@ -140,7 +170,7 @@ return (
       <div ref={canvasRef} style={{ width: "50%" }}></div>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <div style={{ display: "flex", flexDirection: "row" , overflowX: "auto", maxWidth: "400px"}}>
-          <button onClick={() => handleChangeshirt(shirt1, 217, 95, 190, 250)}>
+          <button onClick={() => handleChangeshirt(shirt1,220, 94, 190, 250)}>
             <img src={shirt1} height="100px" width="100px" />
           </button>
           <button onClick={() => handleChangeshirt(shirt2, 220, 94, 190, 250)}>
@@ -188,9 +218,55 @@ return (
     
         
         </div>
-
+        <div>
+      <div>
+        <label>Slider 1</label>
+        <input
+          type="range"
+          min="0"
+          max="700"
+          value={value1}
+          onChange={handleSliderChange1}
+        />
+        <span>{value1}</span>
+      </div>
+      <div>
+        <label>Slider 2</label>
+        <input
+          type="range"
+          min="0"
+          max="700"
+          value={value2}
+          onChange={handleSliderChange2}
+        />
+        <span>{value2}</span>
+      </div>
+      <div>
+        <label>Slider 3</label>
+        <input
+          type="range"
+          min="0"
+          max="700"
+          value={value3}
+          onChange={handleSliderChange3}
+        />
+        <span>{value3}</span>
+      </div>
+      <div>
+        <label>Slider 4</label>
+        <input
+          type="range"
+          min="0"
+          max="700"
+          value={value4}
+          onChange={handleSliderChange4}
+        />
+        <span>{value4}</span>
       </div>
     </div>
+      </div>
+    </div>
+   
   </>
 );
 
