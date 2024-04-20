@@ -17,7 +17,7 @@ import Watch from "./pages/Watch";
 import { DbProvider } from "./common/context/DbContext";
 import MarketPlace from "./pages/MarketPlace";
 import MainHome from "./pages/MainHome";
-import Avatar from "./pages/Avatar";
+
 import Avatarfemale from "./pages/Avatarfemale";
 import AvatarSelection from "./pages/AvatarSelection";
 import MenAvatar1 from "./pages/MenAvatar1";
