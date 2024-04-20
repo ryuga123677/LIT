@@ -15,11 +15,11 @@ const navigate=useNavigate();
       <div style={{ display: "flex", flexDirection: "column",justifyContent:"center", alignItems: "center" ,height:"100%",width:"100%"}}>
         <div style={{ display: "flex", flexDirection: "row",justifyContent:"center" ,alignContent:"center", flexWrap: "wrap",height:"100%",width:"100%"}}>
           <img onClick={()=>navigate('/menavatar1')} src={maleImg1} alt="Male Avatar 1" style={{ width: "33%",height:"100%" }} />
-          <img src={maleImg2} alt="Male Avatar 2" style={{ width: "33%" ,height:"100%"}} />
+          <img onClick={()=>navigate('/menavatar2')} src={maleImg2} alt="Male Avatar 2" style={{ width: "33%" ,height:"100%"}} />
           <img src={maleImg3} alt="Male Avatar 3" style={{ width: "33%",height:"100%" }} />
         </div>
         <div style={{ display: "flex", flexDirection: "row",justifyContent:"center" ,alignContent:"center", flexWrap: "wrap",height:"100%",width:"100%",}}>
-          <img src={femaleImg1} alt="Female Avatar 1" style={{ width: "33%",height:"100%" }} />
+          <img src={femaleImg1} onClick={()=>navigate('/femaleavatar1')} alt="Female Avatar 1" style={{ width: "33%",height:"100%" }} />
           <img onClick={()=>navigate('/femaleavatar2')} src={femaleImg2} alt="Female Avatar 2" style={{ width: "33%",height:"100%" }} />
 
          
