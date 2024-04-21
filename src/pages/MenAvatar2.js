@@ -207,13 +207,11 @@ const MenAvatar2 = () => {
             >
               <img src={shirt3} height="100px" width="100px" />
             </button>
-            <button
-              onClick={() => handleChangeshirt(shirt4, 205, 75, 270, 300)}
-            >
+            <button onClick={() => handleChangeshirt(shirt4, 70, 94, 488, 554)}>
               <img src={shirt4} height="100px" width="100px" />
             </button>
             <button
-              onClick={() => handleChangeshirt(shirt5, 192, 61, 238, 260)}
+              onClick={() => handleChangeshirt(shirt5, 199, 54, 231, 288)}
             >
               <img src={shirt5} height="100px" width="100px" />
             </button>
