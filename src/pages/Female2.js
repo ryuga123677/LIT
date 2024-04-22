@@ -64,7 +64,7 @@ const Female2 = () => {
   // using slider so to get a position value for cloth!!
   const handleSliderChange1 = (event) => {
     setValue1(event.target.value);
-    setShirtPosition((prevState) => ({ ...prevState, x: event.target.value })); //for pant setPantposition
+    setShirtPosition((prevState) => ({ ...prevState, x: event.target.value })); //here give a shirt slider but for pant setPantposition
   };
 
   const handleSliderChange2 = (event) => {
