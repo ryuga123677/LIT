@@ -13,28 +13,86 @@ import femaleImg3 from "../common/assets/Avatar/femalechar/Female AI croqui 03.p
 
 // AvatarSelection component
 const AvatarSelection = () => {
+
   // Hook for navigation
   const navigate = useNavigate();
 
+  
   return (
     <>
-      {/* Header */}
-      <div>Choose character</div>
+      <div>chooose charater</div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100%",
+          width: "100%",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignContent: "center",
+            flexWrap: "wrap",
+            height: "100%",
+            width: "100%",
+          }}
+        >
+          <img
+            onClick={() => navigate("/menavatar1")}
+            src={maleImg1}
+            alt="Male Avatar 1"
+            style={{ width: "33%", height: "100%" }}
+          />
+          <img
+            onClick={() => navigate("/menavatar2")}
+            src={maleImg2}
+            alt="Male Avatar 2"
+            style={{ width: "33%", height: "100%" }}
+          />
 
-      {/* Main content */}
-      <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", height: "100%", width: "100%" }}>
-        {/* Male avatars */}
-        <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignContent: "center", flexWrap: "wrap", height: "100%", width: "100%" }}>
-          <img onClick={() => navigate('/menavatar1')} src={maleImg1} alt="Male Avatar 1" style={{ width: "33%", height: "100%" }} />
-          <img onClick={() => navigate('/menavatar2')} src={maleImg2} alt="Male Avatar 2" style={{ width: "33%", height: "100%" }} />
-          <img onClick={() => navigate('/menavatar3')} src={maleImg3} alt="Male Avatar 3" style={{ width: "33%", height: "100%", cursor: "pointer" }} />
+          <img
+            onClick={() => navigate("/menavatar3")}
+            src={maleImg3}
+            alt="Male Avatar 3"
+            style={{ width: "33%", height: "100%", cursor: "pointer" }}
+          />
         </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignContent: "center",
+            flexWrap: "wrap",
+            height: "100%",
+            width: "100%",
+          }}
+        >
+          <img
+            src={femaleImg1}
+            onClick={() => navigate("/femaleavatar1")}
+            alt="Female Avatar 1"
+            style={{ width: "33%", height: "100%" }}
+          />
+          <img
+            src={femaleImg2}
+            onClick={() => navigate("/female2")}
+            alt="Female Avatar 2"
+            style={{ width: "33%", height: "100%" }}
+          />
 
-        {/* Female avatars */}
-        <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignContent: "center", flexWrap: "wrap", height: "100%", width: "100%" }}>
-          <img onClick={() => navigate('/femaleavatar1')} src={femaleImg1} alt="Female Avatar 1" style={{ width: "33%", height: "100%" }} />
-          <img src={femaleImg2} alt="Female Avatar 2" style={{ width: "33%", height: "100%" }} />
-          <img onClick={() => navigate('/femaleavatar3')} src={femaleImg3} alt="Female Avatar 3" style={{ width: "33%", height: "100%", cursor: "pointer" }} />
+          <img
+            onClick={() => navigate("/femaleavatar3")}
+            src={femaleImg3}
+            alt="Female Avatar 3"
+            style={{ width: "33%", height: "100%", cursor: "pointer" }}
+          />
+
         </div>
       </div>
     </>

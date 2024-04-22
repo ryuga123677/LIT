@@ -18,13 +18,12 @@ import { DbProvider } from "./common/context/DbContext";
 import MarketPlace from "./pages/MarketPlace";
 import MainHome from "./pages/MainHome";
 
-import Avatarfemale from "./pages/Avatarfemale";
 import AvatarSelection from "./pages/AvatarSelection";
 import MenAvatar1 from "./pages/MenAvatar1";
 import MenAvatar2 from "./pages/MenAvatar2";
 import MenAvatar3 from "./pages/MenAvatar3";
 import FemaleAvatar1 from "./pages/FemaleAvatar1";
-//import FemaleAvatar3 from "./pages/Female1";
+import Female2 from "./pages/Female2";
 import FemaleAvatar3 from "./pages/FemaleAvatar3";
 
 const theme = createTheme({
@@ -60,8 +59,9 @@ function App() {
                 <Route path="/menavatar1" element={<MenAvatar1 />} />
                 <Route path="/menavatar2" element={<MenAvatar2 />} />
                 <Route path="/menavatar3" element={<MenAvatar3 />} />
-                <Route path="/femaleavatar1" element={<FemaleAvatar1/>} />
-                
+                <Route path="/femaleavatar1" element={<FemaleAvatar1 />} />
+                <Route path="/female2" element={<Female2 />} />
+
                 <Route path="/femaleavatar3" element={<FemaleAvatar3 />} />
               </Routes>
             </BrowserRouter>
