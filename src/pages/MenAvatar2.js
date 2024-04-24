@@ -108,19 +108,20 @@ const MenAvatar2 = () => {
         p.draw = () => {
           p.background(background.current);
           p.image(imgRef.current, 89, 20, 450, 640);
-          p.image(
-            shirtref1.current,
-            shirtPosition.x,
-            shirtPosition.y,
-            shirtScale.width,
-            shirtScale.height
-          );
+
           p.image(
             pantref1.current,
             pantPosition.x,
             pantPosition.y,
             pantScale.width,
             pantScale.height
+          );
+          p.image(
+            shirtref1.current,
+            shirtPosition.x,
+            shirtPosition.y,
+            shirtScale.width,
+            shirtScale.height
           );
         };
       } catch (error) {

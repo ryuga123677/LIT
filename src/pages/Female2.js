@@ -2,18 +2,20 @@ import React, { useEffect, useRef, useState } from "react";
 import p5 from "p5";
 import { useNavigate } from "react-router-dom";
 import imgPath1 from "../common/assets/Avatar/femalechar/Female AI croqui 2.png";
+
+//imported shirts images
 import shirt1 from "../common/assets/Avatar/femalechar/shirts/f_shirt.png";
 import shirt2 from "../common/assets/Avatar/femalechar/shirts/f_shirt2.png";
 import shirt3 from "../common/assets/Avatar/femalechar/shirts/f_shirt3.png";
-import shirt4 from "../common/assets/Avatar/femalechar/shirts/f_shirt4.png";
+import shirt4 from "../common/assets/Avatar/femalechar/shirts/f_shirt4.png"; //46,34,536,561.
 import shirt5 from "../common/assets/Avatar/femalechar/shirts/f_shirt5.png";
 import shirt6 from "../common/assets/Avatar/femalechar/shirts/f_shirt6.png";
 import shirt7 from "../common/assets/Avatar/femalechar/shirts/f_shirt7.png";
 import shirt8 from "../common/assets/Avatar/femalechar/shirts/f_shirt8.png";
 import shirt9 from "../common/assets/Avatar/femalechar/shirts/f_shirt9.png";
-//imported shirts images
+
 import pant1 from "../common/assets/Avatar/femalechar/pants/f_pant.png";
-import pant2 from "../common/assets/Avatar/femalechar/pants/f_pant2.png";
+import pant2 from "../common/assets/Avatar/femalechar/pants/pant2.png";
 import pant3 from "../common/assets/Avatar/femalechar/pants/pant3.png";
 import pant4 from "../common/assets/Avatar/femalechar/pants/f_pant4.png";
 import pant5 from "../common/assets/Avatar/femalechar/pants/f_pant5.png";
@@ -108,18 +110,18 @@ const Female2 = () => {
           p.background(background.current);
           p.image(imgRef.current, 89, 20, 450, 640);
           p.image(
-            shirtref1.current,
-            shirtPosition.x,
-            shirtPosition.y,
-            shirtScale.width,
-            shirtScale.height
-          );
-          p.image(
             pantref1.current,
             pantPosition.x,
             pantPosition.y,
             pantScale.width,
             pantScale.height
+          );
+          p.image(
+            shirtref1.current,
+            shirtPosition.x,
+            shirtPosition.y,
+            shirtScale.width,
+            shirtScale.height
           );
         };
       } catch (error) {
@@ -193,7 +195,7 @@ const Female2 = () => {
               display: "flex",
               flexDirection: "row",
               overflowX: "auto",
-              maxWidth: "400px",
+              maxWidth: "500px",
             }}
           >
             <button
@@ -226,9 +228,7 @@ const Female2 = () => {
             >
               <img src={shirt6} height="100px" width="100px" />
             </button>
-            <button
-              onClick={() => handleChangeshirt(shirt7, 69, 107, 533, 498)}
-            >
+            <button onClick={() => handleChangeshirt(shirt7, 62, 99, 548, 618)}>
               <img src={shirt7} height="100px" width="100px" />
             </button>
             <button
@@ -248,13 +248,13 @@ const Female2 = () => {
               display: "flex",
               flexDirection: "row",
               overflowX: "auto",
-              maxWidth: "400px",
-            }}
+              maxWidth: "500px",
+            }} //pant 3 :-91 -9 444 704
           >
             <button onClick={() => handleChangepant(pant1, 133, 263, 359, 326)}>
               <img src={pant1} height="100px" width="100px" />
             </button>
-            <button onClick={() => handleChangepant(pant2, 149, 248, 325, 388)}>
+            <button onClick={() => handleChangepant(pant2, 86, 12, 461, 652)}>
               <img src={pant2} height="100px" width="100px" />
             </button>
             <button onClick={() => handleChangepant(pant3, 189, 240, 259, 336)}>
@@ -270,13 +270,14 @@ const Female2 = () => {
               <img src={pant6} height="100px" width="100px" />
             </button>
           </div>
+
           <div>
             <div>
               <label>Slider 1</label>
               <input
                 type="range"
                 min="-200"
-                max="700"
+                max="900"
                 value={value1}
                 onChange={handleSliderChange1}
               />
@@ -298,7 +299,7 @@ const Female2 = () => {
               <input
                 type="range"
                 min="-200"
-                max="700"
+                max="900"
                 value={value3}
                 onChange={handleSliderChange3}
               />
@@ -309,7 +310,7 @@ const Female2 = () => {
               <input
                 type="range"
                 min="-200"
-                max="700"
+                max="900"
                 value={value4}
                 onChange={handleSliderChange4}
               />
