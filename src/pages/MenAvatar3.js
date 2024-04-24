@@ -10,6 +10,13 @@ import shirt5 from "../common/assets/Avatar/malechar/shirts/shirt5.png";
 import shirt6 from "../common/assets/Avatar/malechar/shirts/shirt6.png";
 import shirt7 from "../common/assets/Avatar/malechar/shirts/shirt7.png";
 import shirt8 from "../common/assets/Avatar/malechar/shirts/shirt8.png";
+import shirt9 from "../common/assets/Avatar/malechar/shirts/shirt9.png";
+import shirt10 from "../common/assets/Avatar/malechar/shirts/shirt10.png";
+import shirt11 from "../common/assets/Avatar/malechar/shirts/shirt11.png";
+import shirt12 from "../common/assets/Avatar/malechar/shirts/shirt12.png";
+import shirt13 from "../common/assets/Avatar/malechar/shirts/shirt13.png";
+import shirt14 from "../common/assets/Avatar/malechar/shirts/shirt14.png";
+import shirt15 from "../common/assets/Avatar/malechar/shirts/shirt15.png";
 
 //imported shirts images
 
@@ -26,18 +33,19 @@ import bg from "../common/assets/bg.jpg"; //imported background image
 const MenAvatar2 = () => {
   const navigate = useNavigate();
   const canvasRef = useRef(null);
-  const [shirtImage, setShirtImage] = useState(shirt3); //starting or initial cloth
+  const [shirtImage, setShirtImage] = useState(shirt13); //starting or initial cloth
   const [pantImage, setPantImage] = useState(pant7);
   const [value1, setValue1] = useState(50); //setvalues for sliders
   const [value2, setValue2] = useState(50);
   const [value3, setValue3] = useState(50);
   const [value4, setValue4] = useState(50);
 
-  const [shirtPosition, setShirtPosition] = useState({ x: 212, y: 97 }); //starting or initial cloth positioning values
+  const [shirtPosition, setShirtPosition] = useState({ x: 215, y: 68 }); //starting or initial cloth positioning values
   const [shirtScale, setShirtScale] = useState({
-    width: 197,
-    height: 271,
+    width: 189,
+    height: 299,
   });
+  // shirt13, 215, 68, 189, 299
   // shirt3, 212, 97, 197, 271
   // (shirt7, 180, 90, 264, 241
   const [pantPosition, setPantPosition] = useState({ x: 191, y: 295 });
@@ -65,24 +73,25 @@ const MenAvatar2 = () => {
 
   const myP5Ref = useRef(null);
   // using slider so to get a position value for cloth!!
+
   const handleSliderChange1 = (event) => {
     setValue1(event.target.value);
-    setPantPosition((prevState) => ({ ...prevState, x: event.target.value })); //here give a shirt slider but for pant setPantposition
+    setShirtPosition((prevState) => ({ ...prevState, x: event.target.value }));
   };
 
   const handleSliderChange2 = (event) => {
     setValue2(event.target.value);
-    setPantPosition((prevState) => ({ ...prevState, y: event.target.value }));
+    setShirtPosition((prevState) => ({ ...prevState, y: event.target.value }));
   };
 
   const handleSliderChange3 = (event) => {
     setValue3(event.target.value);
-    setPantScale((prevState) => ({ ...prevState, width: event.target.value }));
+    setShirtScale((prevState) => ({ ...prevState, width: event.target.value }));
   };
 
   const handleSliderChange4 = (event) => {
     setValue4(event.target.value);
-    setPantScale((prevState) => ({
+    setShirtScale((prevState) => ({
       ...prevState,
       height: event.target.value,
     }));
@@ -236,6 +245,32 @@ const MenAvatar2 = () => {
               onClick={() => handleChangeshirt(shirt8, 203, 93, 215, 266)}
             >
               <img src={shirt8} height="100px" width="100px" />
+            </button>
+            <button
+              onClick={() => handleChangeshirt(shirt9, 205, 105, 211, 236)}
+            >
+              <img src={shirt9} height="100px" width="100px" />
+            </button>
+
+            <button
+              onClick={() => handleChangeshirt(shirt11, 206, 104, 203, 237)}
+            >
+              <img src={shirt11} height="100px" width="100px" />
+            </button>
+            <button
+              onClick={() => handleChangeshirt(shirt12, 207, 105, 204, 237)}
+            >
+              <img src={shirt12} height="100px" width="100px" />
+            </button>
+            <button
+              onClick={() => handleChangeshirt(shirt13, 215, 68, 189, 299)}
+            >
+              <img src={shirt13} height="100px" width="100px" />
+            </button>
+            <button
+              onClick={() => handleChangeshirt(shirt14, 129, 60, 362, 351)}
+            >
+              <img src={shirt14} height="100px" width="100px" />
             </button>
           </div>
           <div

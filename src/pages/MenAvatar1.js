@@ -68,22 +68,22 @@ const MenAvatar1 = () => {
   // Slider change handlers
   const handleSliderChange1 = (event) => {
     setValue1(event.target.value);
-    setPantPosition((prevState) => ({ ...prevState, x: event.target.value }));
+    setShirtPosition((prevState) => ({ ...prevState, x: event.target.value }));
   };
 
   const handleSliderChange2 = (event) => {
     setValue2(event.target.value);
-    setPantPosition((prevState) => ({ ...prevState, y: event.target.value }));
+    setShirtPosition((prevState) => ({ ...prevState, y: event.target.value }));
   };
 
   const handleSliderChange3 = (event) => {
     setValue3(event.target.value);
-    setPantScale((prevState) => ({ ...prevState, width: event.target.value }));
+    setShirtScale((prevState) => ({ ...prevState, width: event.target.value }));
   };
 
   const handleSliderChange4 = (event) => {
     setValue4(event.target.value);
-    setPantScale((prevState) => ({ ...prevState, height: event.target.value }));
+    setShirtScale((prevState) => ({ ...prevState, height: event.target.value }));
   };
 
   // Effect hook to set up the p5.js sketch
