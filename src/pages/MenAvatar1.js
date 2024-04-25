@@ -197,7 +197,7 @@ const MenAvatar1 = () => {
         }}
       >
         {/* Canvas */}
-        <div ref={canvasRef} style={{ width: "50%" }}></div>
+        <div ref={canvasRef} style={{ width: "50%"  }}></div>
         {/* Image buttons */}
         <div style={{ display: "flex", flexDirection: "column" }}>
           {/* Buttons for selecting shirt images */}
@@ -362,11 +362,12 @@ const MenAvatar1 = () => {
           flexDirection: "column",
           gap: 20,
          // flexWrap: "wrap",
-          height: "100vh",
+          height: "100%",
+          width:"100vw"
         }}
       >
         {/* Canvas */}
-        <div ref={canvasRef} style={{ width: "100%" ,height:"100%"}}></div>
+        <div ref={canvasRef} style={{ width: "100%" ,height:"max-content"}}></div>
         {/* Image buttons */}
         <div style={{ display: "flex", flexDirection: "column" }}>
           {/* Buttons for selecting shirt images */}
