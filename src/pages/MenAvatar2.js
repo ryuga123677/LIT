@@ -21,28 +21,30 @@ import pant3 from "../common/assets/Avatar/malechar/pants/pant3.png";
 import pant4 from "../common/assets/Avatar/malechar/pants/pant4.png";
 import pant5 from "../common/assets/Avatar/malechar/pants/pant5.png";
 import pant6 from "../common/assets/Avatar/malechar/pants/pant6.png";
-import pant7 from "../common/assets/Avatar/malechar/pants/pant7.png";
+import pant7 from "../common/assets/Avatar/malechar/pants/pant_7.png";
+import pant8 from "../common/assets/Avatar/malechar/pants/pant8.png";
+import pant9 from "../common/assets/Avatar/malechar/pants/pant9.png";
 //imported pant images
 import bg from "../common/assets/bg.jpg"; //imported background image
 
 const MenAvatar2 = () => {
   const navigate = useNavigate();
   const canvasRef = useRef(null);
-  const [shirtImage, setShirtImage] = useState(shirt5); //starting or initial cloth
-  const [pantImage, setPantImage] = useState(pant3);
+  const [shirtImage, setShirtImage] = useState(shirt2); //starting or initial cloth
+  const [pantImage, setPantImage] = useState(pant7);
   const [value1, setValue1] = useState(50); //setvalues for sliders
   const [value2, setValue2] = useState(50);
   const [value3, setValue3] = useState(50);
   const [value4, setValue4] = useState(50);
 
-  const [shirtPosition, setShirtPosition] = useState({ x: 205, y: 49 }); //starting or initial cloth positioning values
+  const [shirtPosition, setShirtPosition] = useState({ x: 81, y: 22 }); //starting or initial cloth positioning values
   const [shirtScale, setShirtScale] = useState({
-    width: 219,
-    height: 325,
+    width: 463,
+    height: 626,
   });
 
-  const [pantPosition, setPantPosition] = useState({ x: 192, y: 271 });
-  const [pantScale, setPantScale] = useState({ width: 255, height: 358 });
+  const [pantPosition, setPantPosition] = useState({ x: 84, y: 46 });
+  const [pantScale, setPantScale] = useState({ width: 458, height: 614 });
 
   const imgRef = useRef(null);
   const shirtref1 = useRef(null);
@@ -63,28 +65,31 @@ const MenAvatar2 = () => {
   const pantref5 = useRef(null);
   const pantref6 = useRef(null);
   const pantref7 = useRef(null);
+  const pantref8 = useRef(null);
+  const pantref9 = useRef(null);
+
   const background = useRef(null);
 
   const myP5Ref = useRef(null);
   // using slider so to get a position value for cloth!!
   const handleSliderChange1 = (event) => {
     setValue1(event.target.value);
-    setShirtPosition((prevState) => ({ ...prevState, x: event.target.value })); //here give a shirt slider but for pant setPantposition
+    setPantPosition((prevState) => ({ ...prevState, x: event.target.value })); //here give a shirt slider but for pant setPantposition
   };
 
   const handleSliderChange2 = (event) => {
     setValue2(event.target.value);
-    setShirtPosition((prevState) => ({ ...prevState, y: event.target.value }));
+    setPantPosition((prevState) => ({ ...prevState, y: event.target.value }));
   };
 
   const handleSliderChange3 = (event) => {
     setValue3(event.target.value);
-    setShirtScale((prevState) => ({ ...prevState, width: event.target.value }));
+    setPantScale((prevState) => ({ ...prevState, width: event.target.value }));
   };
 
   const handleSliderChange4 = (event) => {
     setValue4(event.target.value);
-    setShirtScale((prevState) => ({
+    setPantScale((prevState) => ({
       ...prevState,
       height: event.target.value,
     }));
@@ -273,8 +278,14 @@ const MenAvatar2 = () => {
             <button onClick={() => handleChangepant(pant6, 189, 265, 260, 360)}>
               <img src={pant6} height="100px" width="100px" />
             </button>
-            <button onClick={() => handleChangepant(pant7, 189, 295, 255, 319)}>
+            <button onClick={() => handleChangepant(pant7, 84, 46, 458, 614)}>
               <img src={pant7} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChangepant(pant8, 168, 279, 297, 350)}>
+              <img src={pant8} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChangepant(pant9, 175, 297, 285, 318)}>
+              <img src={pant9} height="100px" width="100px" />
             </button>
           </div>
           <div>
