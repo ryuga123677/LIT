@@ -26,6 +26,9 @@ import pant5 from "../common/assets/Avatar/malechar/pants/pant5.png";
 import pant6 from "../common/assets/Avatar/malechar/pants/pant6.png";
 import pant7 from "../common/assets/Avatar/malechar/pants/pant7.png";
 import bg from "../common/assets/bg.jpg";
+import {
+  useMediaQuery,
+} from "@mui/material";
 // MenAvatar1 component
 const MenAvatar1 = () => {
   // Hook for navigation
@@ -45,6 +48,8 @@ const MenAvatar1 = () => {
 
   const [pantPosition, setPantPosition] = useState({ x: 187, y: 215 });
   const [pantScale, setPantScale] = useState({ width: 260, height: 400 });
+
+  const isXsScreen = useMediaQuery("(max-width:600px)");
   // References for canvas and images
   const imgRef = useRef(null);
   const shirtref1 = useRef(null);
@@ -182,7 +187,7 @@ const MenAvatar1 = () => {
   return (
     <>
       {/* Display canvas and image buttons */}
-      <div
+      {!isXsScreen && (<div
         style={{
           display: "flex",
           flexDirection: "row",
@@ -192,7 +197,7 @@ const MenAvatar1 = () => {
         }}
       >
         {/* Canvas */}
-        <div ref={canvasRef} style={{ width: "50%" }}></div>
+        <div ref={canvasRef} style={{ width: "50%"  }}></div>
         {/* Image buttons */}
         <div style={{ display: "flex", flexDirection: "column" }}>
           {/* Buttons for selecting shirt images */}
@@ -350,7 +355,180 @@ const MenAvatar1 = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div>)}
+      {isXsScreen && (<div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 20,
+         // flexWrap: "wrap",
+          height: "100vh",
+          width:"100vw"
+        }}
+      >
+        {/* Canvas */}
+        <div style={{ width: "100%" ,height:"100%"}}>
+        <div ref={canvasRef} style={{ width: "100%" ,height:"100%"}}></div>
+        </div>
+       
+        {/* Image buttons */}
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          {/* Buttons for selecting shirt images */}
+
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              overflowX: "auto",
+              maxWidth: "400px",
+            }}
+          >
+            <button
+              onClick={() => handleChangeshirt(shirt1, 215, 102, 198, 204)}
+            >
+              <img src={shirt1} height="100px" width="100px" />
+            </button>
+            <button
+              onClick={() => handleChangeshirt(shirt2, 217, 98, 194, 268)}
+            >
+              <img src={shirt2} height="100px" width="100px" />
+            </button>
+            <button
+              onClick={() => handleChangeshirt(shirt3, 225, 100, 180, 270)}
+            >
+              <img src={shirt3} height="100px" width="100px" />
+            </button>
+            <button
+              onClick={() => handleChangeshirt(shirt4, 102, 87, 427, 556)}
+            >
+              <img src={shirt4} height="100px" width="100px" />
+            </button>
+            <button
+              onClick={() => handleChangeshirt(shirt5, 192, 61, 238, 260)}
+            >
+              <img src={shirt5} height="100px" width="100px" />
+            </button>
+            <button
+              onClick={() => handleChangeshirt(shirt6, 221, 102, 177, 236)}
+            >
+              <img src={shirt6} height="100px" width="100px" />
+            </button>
+            <button
+              onClick={() => handleChangeshirt(shirt7, 202, 94, 231, 246)}
+            >
+              <img src={shirt7} height="100px" width="100px" />
+            </button>
+            <button
+              onClick={() => handleChangeshirt(shirt8, 215, 96, 200, 271)}
+            >
+              <img src={shirt8} height="100px" width="100px" />
+            </button>
+            <button
+              onClick={() => handleChangeshirt(shirt9, 199, 120, 223, 215)}
+            >
+              <img src={shirt9} height="100px" width="100px" />
+            </button>
+
+            <button
+              onClick={() => handleChangeshirt(shirt11, 199, 120, 223, 215)}
+            >
+              <img src={shirt11} height="100px" width="100px" />
+            </button>
+            <button
+              onClick={() => handleChangeshirt(shirt12, 199, 120, 223, 215)}
+            >
+              <img src={shirt12} height="100px" width="100px" />
+            </button>
+            <button
+              onClick={() => handleChangeshirt(shirt13, 230, 68, 170, 321)}
+            >
+              <img src={shirt13} height="100px" width="100px" />
+            </button>
+            <button
+              onClick={() => handleChangeshirt(shirt14, 145, 72, 338, 300)}
+            >
+              <img src={shirt14} height="100px" width="100px" />
+            </button>
+          </div>
+          {/* Pant selection */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              overflowX: "auto",
+              maxWidth: "400px",
+            }}
+          >
+            <button onClick={() => handleChangepant(pant1, 145, 237, 336, 401)}>
+              <img src={pant1} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChangepant(pant2, 171, 257, 286, 367)}>
+              <img src={pant2} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChangepant(pant3, 187, 215, 260, 400)}>
+              <img src={pant3} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChangepant(pant4, 43, 217, 544, 440)}>
+              <img src={pant4} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChangepant(pant5, 185, 235, 265, 390)}>
+              <img src={pant5} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChangepant(pant6, 182, 258, 271, 350)}>
+              <img src={pant6} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChangepant(pant7, 197, 242, 237, 375)}>
+              <img src={pant7} height="100px" width="100px" />
+            </button>
+          </div>
+          <div>
+            <div>
+              <label>Slider 1</label>
+              <input
+                type="range"
+                min="0"
+                max="700"
+                value={value1}
+                onChange={handleSliderChange1}
+              />
+              <span>{value1}</span>
+            </div>
+            <div>
+              <label>Slider 2</label>
+              <input
+                type="range"
+                min="0"
+                max="700"
+                value={value2}
+                onChange={handleSliderChange2}
+              />
+              <span>{value2}</span>
+            </div>
+            <div>
+              <label>Slider 3</label>
+              <input
+                type="range"
+                min="0"
+                max="700"
+                value={value3}
+                onChange={handleSliderChange3}
+              />
+              <span>{value3}</span>
+            </div>
+            <div>
+              <label>Slider 4</label>
+              <input
+                type="range"
+                min="0"
+                max="700"
+                value={value4}
+                onChange={handleSliderChange4}
+              />
+              <span>{value4}</span>
+            </div>
+          </div>
+        </div>
+      </div>)}
     </>
   );
 };
