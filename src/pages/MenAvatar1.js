@@ -362,12 +362,15 @@ const MenAvatar1 = () => {
           flexDirection: "column",
           gap: 20,
          // flexWrap: "wrap",
-          height: "100%",
+          height: "100vh",
           width:"100vw"
         }}
       >
         {/* Canvas */}
-        <div ref={canvasRef} style={{ width: "100%" ,height:"max-content"}}></div>
+        <div style={{ width: "100%" ,height:"100%"}}>
+        <div ref={canvasRef} style={{ width: "100%" ,height:"100%"}}></div>
+        </div>
+       
         {/* Image buttons */}
         <div style={{ display: "flex", flexDirection: "column" }}>
           {/* Buttons for selecting shirt images */}
