@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import imgPath1 from "../common/assets/Avatar/femalechar/Female AI croqui 2.png";
 
 //imported shirts images
-import shirt1 from "../common/assets/Avatar/femalechar/shirts/f_shirt.png";
+import shirt1 from "../common/assets/Avatar/femalechar/shirts/f_shirt1.png";
 import shirt2 from "../common/assets/Avatar/femalechar/shirts/f_shirt2.png";
 import shirt3 from "../common/assets/Avatar/femalechar/shirts/f_shirt3.png";
 import shirt4 from "../common/assets/Avatar/femalechar/shirts/f_shirt4.png"; //46,34,536,561.
@@ -199,7 +199,7 @@ const Female2 = () => {
             }}
           >
             <button
-              onClick={() => handleChangeshirt(shirt1, 215, 102, 198, 204)} //buttoms for shirts
+              onClick={() => handleChangeshirt(shirt1, 80, 31, 471, 630)} //buttoms for shirts
             >
               <img src={shirt1} height="100px" width="100px" />
             </button>

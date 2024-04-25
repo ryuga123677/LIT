@@ -3,13 +3,15 @@ import p5 from "p5";
 import { useNavigate } from "react-router-dom";
 import imgPath0 from "../common/assets/Avatar/malechar/Male R 02 croqui.png";
 import shirt1 from "../common/assets/Avatar/malechar/shirts/shirt.png";
-import shirt2 from "../common/assets/Avatar/malechar/shirts/shirt2.png";
+import shirt2 from "../common/assets/Avatar/malechar/shirts/shirt_2.png";
 import shirt3 from "../common/assets/Avatar/malechar/shirts/shirt3.png";
 import shirt4 from "../common/assets/Avatar/malechar/shirts/shirt4.png";
 import shirt5 from "../common/assets/Avatar/malechar/shirts/shirt5.png";
-import shirt6 from "../common/assets/Avatar/malechar/shirts/shirt6.png";
+import shirt6 from "../common/assets/Avatar/malechar/shirts/shirt_6.png";
 import shirt7 from "../common/assets/Avatar/malechar/shirts/shirt7.png";
-import shirt8 from "../common/assets/Avatar/malechar/shirts/shirt8.png";
+import shirt8 from "../common/assets/Avatar/malechar/shirts/shirt_8.png";
+import shirt9 from "../common/assets/Avatar/malechar/shirts/shirt_9.png";
+import shirt10 from "../common/assets/Avatar/malechar/shirts/shirt_10.png";
 
 //imported shirts images
 
@@ -51,6 +53,8 @@ const MenAvatar2 = () => {
   const shirtref6 = useRef(null);
   const shirtref7 = useRef(null);
   const shirtref8 = useRef(null);
+  const shirtref9 = useRef(null);
+  const shirtref10 = useRef(null);
 
   const pantref1 = useRef(null);
   const pantref2 = useRef(null);
@@ -203,9 +207,7 @@ const MenAvatar2 = () => {
             >
               <img src={shirt1} height="100px" width="100px" />
             </button>
-            <button
-              onClick={() => handleChangeshirt(shirt2, 222, 103, 188, 256)}
-            >
+            <button onClick={() => handleChangeshirt(shirt2, 81, 22, 463, 626)}>
               <img src={shirt2} height="100px" width="100px" />
             </button>
             <button
@@ -222,7 +224,7 @@ const MenAvatar2 = () => {
               <img src={shirt5} height="100px" width="100px" />
             </button>
             <button
-              onClick={() => handleChangeshirt(shirt6, 205, 75, 270, 300)}
+              onClick={() => handleChangeshirt(shirt6, 228, 113, 181, 231)}
             >
               <img src={shirt6} height="100px" width="100px" />
             </button>
@@ -232,9 +234,17 @@ const MenAvatar2 = () => {
               <img src={shirt7} height="100px" width="100px" />
             </button>
             <button
-              onClick={() => handleChangeshirt(shirt8, 213, 96, 206, 265)}
+              onClick={() => handleChangeshirt(shirt8, 216, 100, 201, 255)}
             >
               <img src={shirt8} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChangeshirt(shirt9, 85, 22, 457, 629)}>
+              <img src={shirt9} height="100px" width="100px" />
+            </button>
+            <button
+              onClick={() => handleChangeshirt(shirt10, 87, 19, 452, 645)}
+            >
+              <img src={shirt10} height="100px" width="100px" />
             </button>
           </div>
           <div
