@@ -27,7 +27,7 @@ const AvatarSelection = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          height: "100%",
+          height: "max-height",
           width: "100%",
         }}
       >
