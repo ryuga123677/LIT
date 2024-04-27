@@ -15,6 +15,7 @@ import shirt10 from "../common/assets/Avatar/malechar/shirts/shirt_10.png";
 import shirt11 from "../common/assets/Avatar/malechar/shirts/shirt9.png";
 import shirt12 from "../common/assets/Avatar/malechar/shirts/shirt11.png";
 import shirt13 from "../common/assets/Avatar/malechar/shirts/shirt12.png";
+import shirt14 from "../common/assets/Avatar/malechar/shirts/shirt_14.png";
 
 //imported shirts images
 
@@ -214,7 +215,7 @@ const MenAvatar2 = () => {
             }}
           >
             <button
-              onClick={() => handleChangeshirt(shirt1, 217, 102, 195, 231)}
+              onClick={() => handleChangeshirt(shirt1, 217, 102, 195, 231)} //102
             >
               <img src={shirt1} height="100px" width="100px" />
             </button>
@@ -272,6 +273,11 @@ const MenAvatar2 = () => {
             >
               <img src={shirt13} height="100px" width="100px" />
             </button>
+            <button
+              onClick={() => handleChangeshirt(shirt14, 80, 10, 467, 700)}
+            >
+              <img src={shirt14} height="100px" width="100px" />
+            </button>
           </div>
           <div
             style={{
@@ -293,7 +299,7 @@ const MenAvatar2 = () => {
             <button onClick={() => handleChangepant(pant4, 32, 258, 570, 392)}>
               <img src={pant4} height="100px" width="100px" />
             </button>
-            <button onClick={() => handleChangepant(pant5, 185, 235, 265, 390)}>
+            <button onClick={() => handleChangepant(pant5, 186, 251, 265, 373)}>
               <img src={pant5} height="100px" width="100px" />
             </button>
             <button onClick={() => handleChangepant(pant6, 189, 265, 260, 360)}>
