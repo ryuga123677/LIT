@@ -111,9 +111,9 @@ const MenAvatar1 = () => {
     const setupSketch = (p) => {
       try {
         p.setup = () => {
-          const canvasWidth = canvasRef.current.offsetWidth;
-          const canvasHeight = canvasRef.current.offsetHeight;
-          p.createCanvas(canvasWidth, canvasHeight);
+          const canvasWidth = window.innerWidth;
+          const canvasHeight = window.innerHeight;
+          p.createCanvas(canvasWidth/2, canvasHeight);
         };
         p.draw = () => {
           p.background(background.current);
@@ -197,7 +197,7 @@ const MenAvatar1 = () => {
         }}
       >
         {/* Canvas */}
-        <div ref={canvasRef} style={{ width: "50%"  }}></div>
+        <div ref={canvasRef} style={{ width: "50%" ,height:"max-content" }}></div>
         {/* Image buttons */}
         <div style={{ display: "flex", flexDirection: "column" }}>
           {/* Buttons for selecting shirt images */}
