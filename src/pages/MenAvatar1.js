@@ -43,10 +43,10 @@ const MenAvatar1 = () => {
   const [value3, setValue3] = useState(50);
   const [value4, setValue4] = useState(50);
 
-  const [shirtPosition, setShirtPosition] = useState({ x: 192-89, y: 61 });
+  const [shirtPosition, setShirtPosition] = useState({ x: 192-110, y: 61 });
   const [shirtScale, setShirtScale] = useState({ width: 238, height: 260 });
 
-  const [pantPosition, setPantPosition] = useState({ x: 187-89, y: 215 });
+  const [pantPosition, setPantPosition] = useState({ x: 187-110, y: 215 });
   const [pantScale, setPantScale] = useState({ width: 260, height: 400 });
 
   const isXsScreen = useMediaQuery("(max-width:600px)");
@@ -117,7 +117,7 @@ const MenAvatar1 = () => {
         };
         p.draw = () => {
           p.background(background.current);
-          p.image(imgRef.current, 0, 20, 450, 640);
+          p.image(imgRef.current, -21, 20, 450, 640);
           p.image(
             pantref1.current,
             pantPosition.x,
@@ -214,68 +214,68 @@ const MenAvatar1 = () => {
             }}
           >
             <button
-              onClick={() => handleChangeshirt(shirt1, 215-89, 102, 198, 204)}
+              onClick={() => handleChangeshirt(shirt1, 215-110, 102, 198, 204)}
             >
               <img src={shirt1} height="100px" width="100px" />
             </button>
             <button
-              onClick={() => handleChangeshirt(shirt2, 80-89, 24, 461, 598)}
+              onClick={() => handleChangeshirt(shirt2, 80-110, 24, 461, 598)}
             >
               <img src={shirt2} height="100px" width="100px" />
             </button>
             <button
-              onClick={() => handleChangeshirt(shirt3, 225-89, 100, 180, 270)}
+              onClick={() => handleChangeshirt(shirt3, 225-110, 100, 180, 270)}
             >
               <img src={shirt3} height="100px" width="100px" />
             </button>
             <button
-              onClick={() => handleChangeshirt(shirt4, 102-89, 87, 427, 556)}
+              onClick={() => handleChangeshirt(shirt4, 102-110, 87, 427, 556)}
             >
               <img src={shirt4} height="100px" width="100px" />
             </button>
             <button
-              onClick={() => handleChangeshirt(shirt5, 192-89, 61, 238, 260)}
+              onClick={() => handleChangeshirt(shirt5, 192-110, 61, 238, 260)}
             >
               <img src={shirt5} height="100px" width="100px" />
             </button>
             <button
-              onClick={() => handleChangeshirt(shirt6, 221-89, 102, 177, 236)}
+              onClick={() => handleChangeshirt(shirt6, 221-110, 102, 177, 236)}
             >
               <img src={shirt6} height="100px" width="100px" />
             </button>
             <button
-              onClick={() => handleChangeshirt(shirt7, 202-89, 94, 231, 246)}
+              onClick={() => handleChangeshirt(shirt7, 202-110, 94, 231, 246)}
             >
               <img src={shirt7} height="100px" width="100px" />
             </button>
             <button
-              onClick={() => handleChangeshirt(shirt8, 215-89, 96, 200, 271)}
+              onClick={() => handleChangeshirt(shirt8, 215-110, 96, 200, 271)}
             >
               <img src={shirt8} height="100px" width="100px" />
             </button>
             <button
-              onClick={() => handleChangeshirt(shirt9, 199-89, 120, 223, 215)}
+              onClick={() => handleChangeshirt(shirt9, 199-110, 120, 223, 215)}
             >
               <img src={shirt9} height="100px" width="100px" />
             </button>
 
             <button
-              onClick={() => handleChangeshirt(shirt11, 199-89, 120, 223, 215)}
+              onClick={() => handleChangeshirt(shirt11, 199-110, 120, 223, 215)}
             >
               <img src={shirt11} height="100px" width="100px" />
             </button>
             <button
-              onClick={() => handleChangeshirt(shirt12, 199-89, 120, 223, 215)}
+              onClick={() => handleChangeshirt(shirt12, 199-110, 120, 223, 215)}
             >
               <img src={shirt12} height="100px" width="100px" />
             </button>
             <button
-              onClick={() => handleChangeshirt(shirt13, 230-89, 68, 170, 321)}
+              onClick={() => handleChangeshirt(shirt13, 230-110, 68, 170, 321)}
             >
               <img src={shirt13} height="100px" width="100px" />
             </button>
             <button
-              onClick={() => handleChangeshirt(shirt14, 145-89, 72, 338, 300)}
+              onClick={() => handleChangeshirt(shirt14, 145-110, 72, 338, 300)}
             >
               <img src={shirt14} height="100px" width="100px" />
             </button>
@@ -289,25 +289,25 @@ const MenAvatar1 = () => {
               maxWidth: "400px",
             }}
           >
-            <button onClick={() => handleChangepant(pant1, 84, 0, 455, 645)}>
+            <button onClick={() => handleChangepant(pant1, 84-110, 0, 455, 645)}>
               <img src={pant1} height="100px" width="100px" />
             </button>
-            <button onClick={() => handleChangepant(pant2, 171, 257, 286, 367)}>
+            <button onClick={() => handleChangepant(pant2, 171-110, 257, 286, 367)}>
               <img src={pant2} height="100px" width="100px" />
             </button>
-            <button onClick={() => handleChangepant(pant3, 187, 215, 260, 400)}>
+            <button onClick={() => handleChangepant(pant3, 187-110, 215, 260, 400)}>
               <img src={pant3} height="100px" width="100px" />
             </button>
-            <button onClick={() => handleChangepant(pant4, 43, 217, 544, 440)}>
+            <button onClick={() => handleChangepant(pant4, 43-110, 217, 544, 440)}>
               <img src={pant4} height="100px" width="100px" />
             </button>
-            <button onClick={() => handleChangepant(pant5, 185, 235, 265, 390)}>
+            <button onClick={() => handleChangepant(pant5, 185-110, 235, 265, 390)}>
               <img src={pant5} height="100px" width="100px" />
             </button>
-            <button onClick={() => handleChangepant(pant6, 182, 258, 271, 350)}>
+            <button onClick={() => handleChangepant(pant6, 182-110, 258, 271, 350)}>
               <img src={pant6} height="100px" width="100px" />
             </button>
-            <button onClick={() => handleChangepant(pant7, 197, 242, 237, 375)}>
+            <button onClick={() => handleChangepant(pant7, 197-110, 242, 237, 375)}>
               <img src={pant7} height="100px" width="100px" />
             </button>
           </div>
