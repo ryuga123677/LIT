@@ -113,7 +113,7 @@ const MenAvatar1 = () => {
         p.setup = () => {
           const canvasWidth = window.innerWidth;
           const canvasHeight = window.innerHeight;
-          p.createCanvas(canvasWidth/2, canvasHeight);
+          p.createCanvas(canvasWidth, canvasHeight);
         };
         p.draw = () => {
           p.background(background.current);
