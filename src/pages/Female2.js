@@ -20,6 +20,8 @@ import pant3 from "../common/assets/Avatar/femalechar/pants/pant3.png";
 import pant4 from "../common/assets/Avatar/femalechar/pants/f_pant4.png";
 import pant5 from "../common/assets/Avatar/femalechar/pants/f_pant5.png";
 import pant6 from "../common/assets/Avatar/femalechar/pants/f_pant6.png";
+import pant7 from "../common/assets/Avatar/femalechar/pants/pantF2_7.png";
+
 //import pant7 from "../common/assets/Avatar/femalechar/pants/";
 
 //imported pant images
@@ -58,7 +60,7 @@ const Female2 = () => {
   const pantref4 = useRef(null);
   const pantref5 = useRef(null);
   const pantref6 = useRef(null);
-  //const pantref7 = useRef(null);
+  const pantref7 = useRef(null);
 
   const background = useRef(null);
 
@@ -268,6 +270,9 @@ const Female2 = () => {
             </button>
             <button onClick={() => handleChangepant(pant6, 74, 244, 458, 405)}>
               <img src={pant6} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChangepant(pant7, 74, 244, 458, 405)}>
+              <img src={pant7} height="100px" width="100px" />
             </button>
           </div>
 

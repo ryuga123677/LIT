@@ -30,7 +30,7 @@ import pant8 from "../common/assets/Avatar/malechar/pants/pant8.png";
 import pant9 from "../common/assets/Avatar/malechar/pants/pant9.png";
 //imported pant images
 import bg from "../common/assets/bg.jpg"; //imported background image
-
+import { useMediaQuery } from "@mui/material";
 const MenAvatar2 = () => {
   const navigate = useNavigate();
   const canvasRef = useRef(null);
@@ -49,7 +49,7 @@ const MenAvatar2 = () => {
 
   const [pantPosition, setPantPosition] = useState({ x: 84, y: 46 });
   const [pantScale, setPantScale] = useState({ width: 458, height: 614 });
-
+  const isXsScreen = useMediaQuery("(max-width:600px)");
   const imgRef = useRef(null);
   const shirtref1 = useRef(null);
   const shirtref2 = useRef(null);
@@ -250,7 +250,7 @@ const MenAvatar2 = () => {
               <img src={shirt9} height="100px" width="100px" />
             </button>
             <button
-              onClick={() => handleChangeshirt(shirt10, 214, 122, 204, 187)}
+              onClick={() => handleChangeshirt(shirt10, 80, 10, 467, 700)}
             >
               <img src={shirt10} height="100px" width="100px" />
             </button>

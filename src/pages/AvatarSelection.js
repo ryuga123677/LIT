@@ -2,14 +2,14 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 // Importing images for male avatars
-import maleImg1 from "../common/assets/Avatar/malechar/Male R 01_.png";
-import maleImg2 from "../common/assets/Avatar/malechar/Male R 02 croqui.png";
-import maleImg3 from "../common/assets/Avatar/malechar/Male R 03.png";
+import maleImg1 from "../common/assets/Avatar/malechar/Male R01 new.png";
+import maleImg2 from "../common/assets/Avatar/malechar/Male R02 new.png";
+import maleImg3 from "../common/assets/Avatar/malechar/Male R03 new.png";
 
 // Importing images for female avatars
-import femaleImg1 from "../common/assets/Avatar/femalechar/Female AI croqui 01.png";
-import femaleImg2 from "../common/assets/Avatar/femalechar/Female AI croqui 2.png";
-import femaleImg3 from "../common/assets/Avatar/femalechar/Female AI croqui 03.png";
+import femaleImg1 from "../common/assets/Avatar/femalechar/Female AI croqui 01 new.png";
+import femaleImg2 from "../common/assets/Avatar/femalechar/Female AI croqui 2 new1.png";
+import femaleImg3 from "../common/assets/Avatar/femalechar/Female AI croqui 03 new.png";
 import { useMediaQuery } from "@mui/material";
 
 // AvatarSelection component

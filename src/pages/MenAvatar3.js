@@ -4,14 +4,14 @@ import { useNavigate } from "react-router-dom";
 import imgPath0 from "../common/assets/Avatar/malechar/Male R 03.png";
 import shirt1 from "../common/assets/Avatar/malechar/shirts/shirt.png";
 import shirt2 from "../common/assets/Avatar/malechar/shirts/shirt2.png";
-import shirt3 from "../common/assets/Avatar/malechar/shirts/shirt3.png";
+import shirt3 from "../common/assets/Avatar/malechar/shirts/shirt3_M3.png";
 import shirt4 from "../common/assets/Avatar/malechar/shirts/shirt4.png";
 import shirt5 from "../common/assets/Avatar/malechar/shirts/shirt5.png";
 import shirt6 from "../common/assets/Avatar/malechar/shirts/shirt6.png";
 import shirt7 from "../common/assets/Avatar/malechar/shirts/shirt7.png";
 import shirt8 from "../common/assets/Avatar/malechar/shirts/shirt8.png";
-import shirt9 from "../common/assets/Avatar/malechar/shirts/shirt9.png";
-import shirt10 from "../common/assets/Avatar/malechar/shirts/shirt10.png";
+import shirt9 from "../common/assets/Avatar/malechar/shirts/shirtM3_9.png";
+import shirt10 from "../common/assets/Avatar/malechar/shirts/shirtM3_10.png";
 import shirt11 from "../common/assets/Avatar/malechar/shirts/shirt11.png";
 import shirt12 from "../common/assets/Avatar/malechar/shirts/shirt12.png";
 import shirt13 from "../common/assets/Avatar/malechar/shirts/shirt13.png";
@@ -20,13 +20,17 @@ import shirt15 from "../common/assets/Avatar/malechar/shirts/shirt15.png";
 
 //imported shirts images
 
-import pant1 from "../common/assets/Avatar/malechar/pants/pant.png";
+import pant1 from "../common/assets/Avatar/malechar/pants/pantM3_1.png";
 import pant2 from "../common/assets/Avatar/malechar/pants/pant2.png";
-import pant3 from "../common/assets/Avatar/malechar/pants/pant3.png";
-import pant4 from "../common/assets/Avatar/malechar/pants/pant4.png";
+import pant3 from "../common/assets/Avatar/malechar/pants/pantM3_3.png";
+import pant4 from "../common/assets/Avatar/malechar/pants/pantM3_4.png";
 import pant5 from "../common/assets/Avatar/malechar/pants/pant5.png";
 import pant6 from "../common/assets/Avatar/malechar/pants/pant6.png";
 import pant7 from "../common/assets/Avatar/malechar/pants/pant7.png";
+import pant8 from "../common/assets/Avatar/malechar/pants/Male3_9.png";
+import pant9 from "../common/assets/Avatar/malechar/pants/pantM3_10.png";
+import pant10 from "../common/assets/Avatar/malechar/pants/pantM3_11.png";
+import pant11 from "../common/assets/Avatar/malechar/pants/pantM3_12.png";
 //imported pant images
 import bg from "../common/assets/bg.jpg"; //imported background image
 
@@ -61,6 +65,10 @@ const MenAvatar2 = () => {
   const shirtref6 = useRef(null);
   const shirtref7 = useRef(null);
   const shirtref8 = useRef(null);
+  const shirtref9 = useRef(null);
+  const shirtref10 = useRef(null);
+  const shirtref11 = useRef(null);
+  const shirtref12 = useRef(null);
 
   const pantref1 = useRef(null);
   const pantref2 = useRef(null);
@@ -69,6 +77,11 @@ const MenAvatar2 = () => {
   const pantref5 = useRef(null);
   const pantref6 = useRef(null);
   const pantref7 = useRef(null);
+  const pantref8 = useRef(null);
+  const pantref9 = useRef(null);
+  const pantref10 = useRef(null);
+  const pantref11 = useRef(null);
+
   const background = useRef(null);
 
   const myP5Ref = useRef(null);
@@ -219,7 +232,7 @@ const MenAvatar2 = () => {
               <img src={shirt2} height="100px" width="100px" />
             </button>
             <button
-              onClick={() => handleChangeshirt(shirt3, 212, 97, 197, 271)}
+              onClick={() => handleChangeshirt(shirt3, 98, -91, 410, 845)}
             >
               <img src={shirt3} height="100px" width="100px" />
             </button>
@@ -247,15 +260,15 @@ const MenAvatar2 = () => {
               <img src={shirt8} height="100px" width="100px" />
             </button>
             <button
-              onClick={() => handleChangeshirt(shirt9, 205, 105, 211, 236)}
+              onClick={() => handleChangeshirt(shirt9, 87, -101, 437, 883)}
             >
               <img src={shirt9} height="100px" width="100px" />
             </button>
 
             <button
-              onClick={() => handleChangeshirt(shirt11, 206, 104, 203, 237)}
+              onClick={() => handleChangeshirt(shirt10, 102, -92, 402, 848)}
             >
-              <img src={shirt11} height="100px" width="100px" />
+              <img src={shirt10} height="100px" width="100px" />
             </button>
             <button
               onClick={() => handleChangeshirt(shirt12, 207, 105, 204, 237)}
@@ -281,16 +294,16 @@ const MenAvatar2 = () => {
               maxWidth: "400px",
             }}
           >
-            <button onClick={() => handleChangepant(pant1, 128, 283, 358, 348)}>
+            <button onClick={() => handleChangepant(pant1, 88, -97, 427, 858)}>
               <img src={pant1} height="100px" width="100px" />
             </button>
             <button onClick={() => handleChangepant(pant2, 174, 304, 261, 310)}>
               <img src={pant2} height="100px" width="100px" />
             </button>
-            <button onClick={() => handleChangepant(pant3, 181, 289, 253, 319)}>
+            <button onClick={() => handleChangepant(pant3, 85, -74, 433, 814)}>
               <img src={pant3} height="100px" width="100px" />
             </button>
-            <button onClick={() => handleChangepant(pant4, 28, 263, 550, 385)}>
+            <button onClick={() => handleChangepant(pant4, 100, -50, 406)}>
               <img src={pant4} height="100px" width="100px" />
             </button>
             <button onClick={() => handleChangepant(pant5, 179, 266, 259, 349)}>
@@ -302,14 +315,26 @@ const MenAvatar2 = () => {
             <button onClick={() => handleChangepant(pant7, 191, 295, 231, 315)}>
               <img src={pant7} height="100px" width="100px" />
             </button>
+            <button onClick={() => handleChangepant(pant8, 99, -79, 409, 829)}>
+              <img src={pant8} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChangepant(pant9, 85, -74, 433, 814)}>
+              <img src={pant9} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChangepant(pant10, 85, -74, 433, 814)}>
+              <img src={pant10} height="100px" width="100px" />
+            </button>
+            <button onClick={() => handleChangepant(pant11, 85, -74, 433, 814)}>
+              <img src={pant11} height="100px" width="100px" />
+            </button>
           </div>
           <div>
             <div>
               <label>Slider 1</label>
               <input
                 type="range"
-                min="0"
-                max="700"
+                min="-900"
+                max="900"
                 value={value1}
                 onChange={handleSliderChange1}
               />
@@ -319,8 +344,8 @@ const MenAvatar2 = () => {
               <label>Slider 2</label>
               <input
                 type="range"
-                min="0"
-                max="700"
+                min="-900"
+                max="900"
                 value={value2}
                 onChange={handleSliderChange2}
               />
@@ -330,8 +355,8 @@ const MenAvatar2 = () => {
               <label>Slider 3</label>
               <input
                 type="range"
-                min="0"
-                max="700"
+                min="-900"
+                max="900"
                 value={value3}
                 onChange={handleSliderChange3}
               />
@@ -341,8 +366,8 @@ const MenAvatar2 = () => {
               <label>Slider 4</label>
               <input
                 type="range"
-                min="0"
-                max="700"
+                min="-900"
+                max="900"
                 value={value4}
                 onChange={handleSliderChange4}
               />
