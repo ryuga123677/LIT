@@ -12,8 +12,8 @@ import shirt7 from "../common/assets/Avatar/malechar/shirts/shirt_7.png";
 import shirt8 from "../common/assets/Avatar/malechar/shirts/shirt_8.png";
 import shirt9 from "../common/assets/Avatar/malechar/shirts/shirt_9.png";
 import shirt10 from "../common/assets/Avatar/malechar/shirts/shirt_10.png";
-import shirt11 from "../common/assets/Avatar/malechar/shirts/shirt9.png";
-import shirt12 from "../common/assets/Avatar/malechar/shirts/shirt11.png";
+import shirt11 from "../common/assets/Avatar/malechar/shirts/M2_11.png";
+import shirt12 from "../common/assets/Avatar/malechar/shirts/M2_12.png";
 import shirt13 from "../common/assets/Avatar/malechar/shirts/shirt12.png";
 import shirt14 from "../common/assets/Avatar/malechar/shirts/shirt_14.png";
 
@@ -81,22 +81,22 @@ const MenAvatar2 = () => {
   // using slider so to get a position value for cloth!!
   const handleSliderChange1 = (event) => {
     setValue1(event.target.value);
-    setPantPosition((prevState) => ({ ...prevState, x: event.target.value })); //here give a shirt slider but for pant setPantposition
+    setShirtPosition((prevState) => ({ ...prevState, x: event.target.value })); //here give a shirt slider but for pant setPantposition
   };
 
   const handleSliderChange2 = (event) => {
     setValue2(event.target.value);
-    setPantPosition((prevState) => ({ ...prevState, y: event.target.value }));
+    setShirtPosition((prevState) => ({ ...prevState, y: event.target.value }));
   };
 
   const handleSliderChange3 = (event) => {
     setValue3(event.target.value);
-    setPantScale((prevState) => ({ ...prevState, width: event.target.value }));
+    setShirtScale((prevState) => ({ ...prevState, width: event.target.value }));
   };
 
   const handleSliderChange4 = (event) => {
     setValue4(event.target.value);
-    setPantScale((prevState) => ({
+    setShirtScale((prevState) => ({
       ...prevState,
       height: event.target.value,
     }));
@@ -124,14 +124,14 @@ const MenAvatar2 = () => {
         p.draw = () => {
           p.background(background.current);
           p.image(imgRef.current, -3, 19, 635, 640);
-          /*
+
           p.image(
             pantref1.current,
             pantPosition.x,
             pantPosition.y,
             pantScale.width,
             pantScale.height
-          );*/
+          );
           p.image(
             shirtref1.current,
             shirtPosition.x,
@@ -254,13 +254,11 @@ const MenAvatar2 = () => {
             >
               <img src={shirt10} height="100px" width="100px" />
             </button>
-            <button
-              onClick={() => handleChangeshirt(shirt11, 223, 113, 190, 220)}
-            >
+            <button onClick={() => handleChangeshirt(shirt11, 74, 2, 482, 747)}>
               <img src={shirt11} height="100px" width="100px" />
             </button>
             <button
-              onClick={() => handleChangeshirt(shirt12, 222, 111, 191, 237)}
+              onClick={() => handleChangeshirt(shirt12, 83, 13, 460, 679)}
             >
               <img src={shirt12} height="100px" width="100px" />
             </button>

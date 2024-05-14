@@ -118,7 +118,7 @@ const Female2 = () => {
         };
         p.draw = () => {
           p.background(background.current);
-          p.image(imgRef.current, -20, -15, 670, 690);
+          p.image(imgRef.current, -20, -6, 670, 690);
           p.image(
             pantref1.current,
             pantPosition.x,

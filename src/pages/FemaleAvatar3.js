@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import p5 from "p5";
 import { useNavigate } from "react-router-dom";
-import imgPath1 from "../common/assets/Avatar/femalechar/Female 3  croqui new .png";
+import imgPath1 from "../common/assets/Avatar/femalechar/Female 3 new.png";
 import shirt1 from "../common/assets/Avatar/femalechar/shirts/F3_1.png";
 import shirt2 from "../common/assets/Avatar/femalechar/shirts/f_shirt2.png";
 import shirt3 from "../common/assets/Avatar/femalechar/shirts/f_shirt3.png";
@@ -109,7 +109,7 @@ const Female3 = () => {
         };
         p.draw = () => {
           p.background(background.current);
-          p.image(imgRef.current, -35, 12, 705, 640);
+          p.image(imgRef.current, -42, 12, 705, 640);
           /* p.image(
             pantref1.current,
             pantPosition.x,
