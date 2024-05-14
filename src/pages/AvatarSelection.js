@@ -7,9 +7,9 @@ import maleImg2 from "../common/assets/Avatar/malechar/Male R02 new.png";
 import maleImg3 from "../common/assets/Avatar/malechar/Male R03 new.png";
 
 // Importing images for female avatars
-import femaleImg1 from "../common/assets/Avatar/femalechar/Female AI croqui 01 new.png";
+import femaleImg1 from "../common/assets/Avatar/femalechar/Female 1 croqui  new.png";
 import femaleImg2 from "../common/assets/Avatar/femalechar/Female AI croqui 2 new1.png";
-import femaleImg3 from "../common/assets/Avatar/femalechar/Female AI croqui 03 new.png";
+import femaleImg3 from "../common/assets/Avatar/femalechar/Female 3  croqui new .png";
 import { useMediaQuery } from "@mui/material";
 
 // AvatarSelection component

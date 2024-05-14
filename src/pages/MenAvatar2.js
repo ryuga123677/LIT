@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import p5 from "p5";
 import { useNavigate } from "react-router-dom";
-import imgPath0 from "../common/assets/Avatar/malechar/Male R 02 croqui.png";
+import imgPath0 from "../common/assets/Avatar/malechar/Male R02 new.png";
 import shirt1 from "../common/assets/Avatar/malechar/shirts/shirt.png";
 import shirt2 from "../common/assets/Avatar/malechar/shirts/shirt_2.png";
 import shirt3 from "../common/assets/Avatar/malechar/shirts/shirt3.png";
@@ -123,15 +123,15 @@ const MenAvatar2 = () => {
         };
         p.draw = () => {
           p.background(background.current);
-          p.image(imgRef.current, 89, 20, 450, 640);
-
+          p.image(imgRef.current, -3, 19, 635, 640);
+          /*
           p.image(
             pantref1.current,
             pantPosition.x,
             pantPosition.y,
             pantScale.width,
             pantScale.height
-          );
+          );*/
           p.image(
             shirtref1.current,
             shirtPosition.x,
@@ -311,6 +311,20 @@ const MenAvatar2 = () => {
               <img src={pant9} height="100px" width="100px" />
             </button>
           </div>
+
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              overflowX: "auto",
+              maxWidth: "400px",
+            }}
+          >
+            <button onClick={() => handleChangepant(shirt4, 70, 94, 488, 554)}>
+              <img src={shirt4} height="100px" width="100px" />
+            </button>
+          </div>
+
           <div>
             <div>
               <label>Slider 1</label>

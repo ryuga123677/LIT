@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import p5 from "p5";
 import { useNavigate } from "react-router-dom";
-import imgPath1 from "../common/assets/Avatar/femalechar/Female AI croqui 01.png";
+import imgPath1 from "../common/assets/Avatar/femalechar/Female 1 croqui  new.png";
 import shirt1 from "../common/assets/Avatar/femalechar/shirts/f_shirt.png";
 import shirt2 from "../common/assets/Avatar/femalechar/shirts/f_shirt2.png";
 import shirt3 from "../common/assets/Avatar/femalechar/shirts/f_shirt3.png";
@@ -27,7 +27,6 @@ const FemaleAvatar1 = () => {
   const [value2, setValue2] = useState(50);
   const [value3, setValue3] = useState(50);
   const [value4, setValue4] = useState(50);
-
 
   const [shirtPosition, setShirtPosition] = useState({ x: 196, y: 93 });
   const [shirtScale, setShirtScale] = useState({ width: 182, height: 251 });
@@ -71,7 +70,10 @@ const FemaleAvatar1 = () => {
 
   const handleSliderChange4 = (event) => {
     setValue4(event.target.value);
-    setShirtScale((prevState) => ({ ...prevState, height: event.target.value }));
+    setShirtScale((prevState) => ({
+      ...prevState,
+      height: event.target.value,
+    }));
   };
 
   useEffect(() => {
@@ -95,7 +97,7 @@ const FemaleAvatar1 = () => {
         };
         p.draw = () => {
           p.background(background.current);
-          p.image(imgRef.current, 89, 20, 450, 640);
+          p.image(imgRef.current, -35, 12, 705, 640);
           p.image(
             shirtref1.current,
             shirtPosition.x,
