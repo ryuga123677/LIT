@@ -32,11 +32,15 @@ import pant9 from "../common/assets/Avatar/malechar/pants/pantM3_10.png";
 import pant10 from "../common/assets/Avatar/malechar/pants/pantM3_11.png";
 //import pant11 from "../common/assets/Avatar/malechar/pants/pantM3_12.png";
 //imported pant images
-import bg from "../common/assets/bg.jpg"; //imported background image
+import bg from "../common/assets/Bgdark.jpg"; //imported background image
+import bg1 from "../common/assets/Bgcroqui3.jpg";
+import { useMediaQuery } from "@mui/material";
 
 const MenAvatar2 = () => {
+  //Hook for navigation
   const navigate = useNavigate();
   const canvasRef = useRef(null);
+  // State for shirt and pant images, positions, and scales
   const [shirtImage, setShirtImage] = useState(shirt13); //starting or initial cloth
   const [pantImage, setPantImage] = useState(pant8);
   const [value1, setValue1] = useState(50); //setvalues for sliders
@@ -56,7 +60,8 @@ const MenAvatar2 = () => {
   const [pantScale, setPantScale] = useState({ width: 409, height: 829 });
   // pant7, 191, 295, 231, 315)
   //99, -79, 409, 829;
-
+  const isXsScreen = useMediaQuery("(max-width:600px)");
+  // References for canvas and images
   const imgRef = useRef(null);
   const shirtref1 = useRef(null);
   const shirtref2 = useRef(null);
@@ -84,7 +89,7 @@ const MenAvatar2 = () => {
   const pantref11 = useRef(null);
 
   const background = useRef(null);
-
+  const background1 = useRef(null);
   const myP5Ref = useRef(null);
   // using slider so to get a position value for cloth!!
 
@@ -110,7 +115,7 @@ const MenAvatar2 = () => {
       height: event.target.value,
     }));
   };
-
+  // Effect hook to set up the p5.js sketch
   useEffect(() => {
     const preloadImage = (p) => {
       try {
@@ -118,21 +123,24 @@ const MenAvatar2 = () => {
         shirtref1.current = p.loadImage(shirtImage);
         pantref1.current = p.loadImage(pantImage);
         background.current = p.loadImage(bg);
+        background1.current = p.loadImage(bg1);
       } catch (error) {
         console.error("Error loading image:", error);
       }
     };
-
+    // Function to set up the p5.js sketch
     const setupSketch = (p) => {
       try {
         p.setup = () => {
-          const canvasWidth = canvasRef.current.offsetWidth;
-          const canvasHeight = canvasRef.current.offsetHeight;
+          const canvasWidth = window.innerWidth;
+          const canvasHeight = window.innerHeight;
           p.createCanvas(canvasWidth, canvasHeight);
         };
         p.draw = () => {
           p.background(background.current);
-          p.image(imgRef.current, 89, 20, 450, 640);
+          p.image(background1.current, 85, 20, 450, 640); //-9, 0, 650, 840 bigcentre....0, 90, 550, 640.
+          p.image(imgRef.current, 90, 20, 450, 640);
+
           p.image(
             pantref1.current,
             pantPosition.x,
@@ -162,6 +170,7 @@ const MenAvatar2 = () => {
 
     return () => {
       try {
+        // Initializing p5.js sketch
         myP5Ref.current.remove();
       } catch (error) {
         console.error("Error removing p5.js sketch:", error);
@@ -179,7 +188,7 @@ const MenAvatar2 = () => {
     value3,
     value4,
   ]);
-
+  // Function to handle shirt change
   const handleChangeshirt = (
     newShirtImage,
     newX,
@@ -191,6 +200,7 @@ const MenAvatar2 = () => {
     setShirtPosition({ x: newX, y: newY });
     setShirtScale({ width: newWidth, height: newHeight });
   };
+  // Function to handle pant change
   const handleChangepant = (newPantImage, newX, newY, newWidth, newHeight) => {
     setPantImage(newPantImage);
     setPantPosition({ x: newX, y: newY });
@@ -217,11 +227,12 @@ const MenAvatar2 = () => {
           <div
             style={{
               display: "flex",
-              flexDirection: "row",
+              flexDirection: "row-column",
               overflowX: "auto",
-              maxWidth: "400px",
+              maxWidth: "500px",
             }}
           >
+            `w`s
             <button
               onClick={() => handleChangeshirt(shirt1, 208, 90, 203, 271)}
             >
@@ -265,7 +276,6 @@ const MenAvatar2 = () => {
             >
               <img src={shirt9} height="100px" width="100px" />
             </button>
-
             <button
               onClick={() => handleChangeshirt(shirt10, 102, -92, 402, 848)}
             >

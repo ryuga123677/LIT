@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import p5 from "p5";
 import { useNavigate } from "react-router-dom";
-import imgPath1 from "../common/assets/Avatar/femalechar/Female 1 croqui  new.png";
+import imgPath1 from "../common/assets/Avatar/femalechar/Female1new.png";
 import shirt1 from "../common/assets/Avatar/femalechar/shirts/f_shirt.png";
 import shirt2 from "../common/assets/Avatar/femalechar/shirts/f_shirt2.png";
 import shirt3 from "../common/assets/Avatar/femalechar/shirts/f_shirt3.png";

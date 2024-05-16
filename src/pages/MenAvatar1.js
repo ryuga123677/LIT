@@ -25,7 +25,7 @@ import pant4 from "../common/assets/Avatar/malechar/pants/pant4.png";
 import pant5 from "../common/assets/Avatar/malechar/pants/pant5.png";
 import pant6 from "../common/assets/Avatar/malechar/pants/pant6.png";
 import pant7 from "../common/assets/Avatar/malechar/pants/pant_7.png";
-import bg from "../common/assets/bg.jpg";
+import bg from "../common/assets/Bgdark.jpg";
 import { useMediaQuery } from "@mui/material";
 // MenAvatar1 component
 const MenAvatar1 = () => {
