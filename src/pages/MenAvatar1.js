@@ -26,6 +26,7 @@ import pant5 from "../common/assets/Avatar/malechar/pants/pant5.png";
 import pant6 from "../common/assets/Avatar/malechar/pants/pant6.png";
 import pant7 from "../common/assets/Avatar/malechar/pants/pant_7.png";
 import bg from "../common/assets/Bgdark.jpg";
+import bg1 from "../common/assets/Bgcroqui1.jpg";
 import { useMediaQuery } from "@mui/material";
 // MenAvatar1 component
 const MenAvatar1 = () => {
@@ -41,10 +42,10 @@ const MenAvatar1 = () => {
   const [value3, setValue3] = useState(50);
   const [value4, setValue4] = useState(50);
 
-  const [shirtPosition, setShirtPosition] = useState({ x: 192 - 110, y: 61 });
-  const [shirtScale, setShirtScale] = useState({ width: 238, height: 260 });
+  const [shirtPosition, setShirtPosition] = useState({ x: 295, y: 71 });
+  const [shirtScale, setShirtScale] = useState({ width: 228, height: 260 });
 
-  const [pantPosition, setPantPosition] = useState({ x: 187 - 110, y: 215 });
+  const [pantPosition, setPantPosition] = useState({ x: 280, y: 235 });
   const [pantScale, setPantScale] = useState({ width: 260, height: 400 });
 
   const isXsScreen = useMediaQuery("(max-width:600px)");
@@ -66,6 +67,7 @@ const MenAvatar1 = () => {
   const pantref6 = useRef(null);
   const pantref7 = useRef(null);
   const background = useRef(null);
+  const background1 = useRef(null);
 
   const myP5Ref = useRef(null);
   // Slider change handlers
@@ -101,6 +103,7 @@ const MenAvatar1 = () => {
         shirtref1.current = p.loadImage(shirtImage);
         pantref1.current = p.loadImage(pantImage);
         background.current = p.loadImage(bg);
+        background1.current = p.loadImage(bg1);
       } catch (error) {
         console.error("Error loading image:", error);
       }
@@ -115,6 +118,7 @@ const MenAvatar1 = () => {
         };
         p.draw = () => {
           p.background(background.current);
+          p.image(background1.current, 90, 19, 635, 640);
           p.image(imgRef.current, 90, 19, 635, 640);
           p.image(
             pantref1.current,
@@ -189,7 +193,8 @@ const MenAvatar1 = () => {
         style={{
           display: "flex",
           flexDirection: "row",
-          gap: 20,
+          gap: "140px",
+
           flexWrap: "wrap",
           height: "100vh",
         }}
@@ -202,7 +207,15 @@ const MenAvatar1 = () => {
         ></div>
 
         {/* Image buttons */}
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            maxWidth: "400px",
+            maxHeight: "700px",
+            paddingTop: "70px",
+          }}
+        >
           {/* Buttons for selecting shirt images */}
 
           <div
@@ -210,7 +223,9 @@ const MenAvatar1 = () => {
               display: "flex",
               flexDirection: "row",
               overflowX: "auto",
-              maxWidth: "400px",
+              Width: "500px",
+              height: "200px",
+              gap: "5px",
             }}
           >
             <button
@@ -286,7 +301,9 @@ const MenAvatar1 = () => {
               display: "flex",
               flexDirection: "row",
               overflowX: "auto",
-              maxWidth: "400px",
+              Width: "400px",
+              height: "200px",
+              gap: "5px",
             }}
           >
             <button

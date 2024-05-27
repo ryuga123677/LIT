@@ -35,7 +35,9 @@ import pant13 from "../common/assets/Avatar/malechar/pants/Hair4.png";
 
 //imported pant images
 
-import bg from "../common/assets/bg.jpg"; //imported background image
+import bg from "../common/assets/Bgdark.jpg";
+import bg1 from "../common/assets/Bgcroqui3.jpg";
+//imported background image
 import { useMediaQuery } from "@mui/material";
 const MenAvatar2 = () => {
   const navigate = useNavigate();
@@ -84,7 +86,9 @@ const MenAvatar2 = () => {
   const pantref11 = useRef(null);
   const pantref12 = useRef(null);
   const pantref13 = useRef(null);
+
   const background = useRef(null);
+  const background1 = useRef(null);
 
   const myP5Ref = useRef(null);
   // using slider so to get a position value for cloth!!
@@ -117,6 +121,7 @@ const MenAvatar2 = () => {
         imgRef.current = p.loadImage(imgPath0);
         shirtref1.current = p.loadImage(shirtImage);
         pantref1.current = p.loadImage(pantImage);
+        background1.current = p.loadImage(bg1);
         background.current = p.loadImage(bg);
       } catch (error) {
         console.error("Error loading image:", error);
@@ -126,12 +131,13 @@ const MenAvatar2 = () => {
     const setupSketch = (p) => {
       try {
         p.setup = () => {
-          const canvasWidth = canvasRef.current.offsetWidth;
-          const canvasHeight = canvasRef.current.offsetHeight;
+          const canvasWidth = window.innerWidth;
+          const canvasHeight = window.innerHeight;
           p.createCanvas(canvasWidth, canvasHeight);
         };
         p.draw = () => {
           p.background(background.current);
+          p.image(background1.current, -3, 19, 635, 640);
           p.image(imgRef.current, -3, 19, 635, 640);
 
           p.image(
@@ -208,19 +214,30 @@ const MenAvatar2 = () => {
         style={{
           display: "flex",
           flexDirection: "row",
-          gap: 20,
+          gap: "140px",
+
           flexWrap: "wrap",
           height: "100vh",
         }} //buttoms for shirts
       >
         <div ref={canvasRef} style={{ width: "50%" }}></div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            maxWidth: "400px",
+            maxHeight: "700px",
+            paddingTop: "70px",
+          }}
+        >
           <div
             style={{
               display: "flex",
               flexDirection: "row",
               overflowX: "auto",
-              maxWidth: "400px",
+              Width: "500px",
+              height: "200px",
+              gap: "5px",
             }}
           >
             <button
@@ -287,7 +304,9 @@ const MenAvatar2 = () => {
               display: "flex",
               flexDirection: "row",
               overflowX: "auto",
-              maxWidth: "400px",
+              Width: "400px",
+              height: "200px",
+              gap: "5px",
             }}
           >
             <button onClick={() => handleChangepant(pant1, 77, 16, 475, 653)}>
@@ -324,7 +343,9 @@ const MenAvatar2 = () => {
               display: "flex",
               flexDirection: "row",
               overflowX: "auto",
-              maxWidth: "400px",
+              Width: "400px",
+              height: "200px",
+              gap: "5px",
             }}
           >
             <button onClick={() => handleChangepant(shirt4, 70, 94, 488, 554)}>

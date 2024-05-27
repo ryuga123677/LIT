@@ -27,7 +27,10 @@ import pant10 from "../common/assets/Avatar/femalechar/pants/Hair3.png";
 import pant11 from "../common/assets/Avatar/femalechar/pants/Hair4.png";
 
 //imported pant images
-import bg from "../common/assets/bg.jpg";
+import bg from "../common/assets/Bgdark.jpg";
+import bg1 from "../common/assets/Bggrey.jpg";
+import { useMediaQuery } from "@mui/material";
+
 //imported background image
 const Female2 = () => {
   const navigate = useNavigate();
@@ -44,6 +47,8 @@ const Female2 = () => {
 
   const [pantPosition, setPantPosition] = useState({ x: 127, y: 206 });
   const [pantScale, setPantScale] = useState({ width: 369, height: 389 });
+
+  const isXsScreen = useMediaQuery("(max-width:600px)");
 
   const imgRef = useRef(null);
   const dressref1 = useRef(null);
@@ -71,6 +76,7 @@ const Female2 = () => {
   const pantref11 = useRef(null);
 
   const background = useRef(null);
+  const background1 = useRef(null);
 
   const myP5Ref = useRef(null);
   // using slider so to get a position value for cloth!!
@@ -104,6 +110,7 @@ const Female2 = () => {
         shirtref1.current = p.loadImage(shirtImage);
         pantref1.current = p.loadImage(pantImage);
         background.current = p.loadImage(bg);
+        background1.current = p.loadImage(bg1);
       } catch (error) {
         console.error("Error loading image:", error);
       }
@@ -112,12 +119,13 @@ const Female2 = () => {
     const setupSketch = (p) => {
       try {
         p.setup = () => {
-          const canvasWidth = canvasRef.current.offsetWidth;
-          const canvasHeight = canvasRef.current.offsetHeight;
+          const canvasWidth = window.innerWidth;
+          const canvasHeight = window.innerHeight;
           p.createCanvas(canvasWidth, canvasHeight);
         };
         p.draw = () => {
           p.background(background.current);
+          p.image(background1.current, 40, 0, 550, 700);
           p.image(imgRef.current, -20, -6, 670, 690);
           p.image(
             pantref1.current,
@@ -193,19 +201,29 @@ const Female2 = () => {
         style={{
           display: "flex",
           flexDirection: "row",
-          gap: 20,
+          gap: "140px",
           flexWrap: "wrap",
           height: "100vh",
         }}
       >
         <div ref={canvasRef} style={{ width: "50%" }}></div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            maxWidth: "400px",
+            maxHeight: "700px",
+            paddingTop: "70px",
+          }}
+        >
           <div
             style={{
               display: "flex",
               flexDirection: "row",
               overflowX: "auto",
-              maxWidth: "500px",
+              Width: "500px",
+              height: "200px",
+              gap: "5px",
             }}
           >
             <button
@@ -253,7 +271,9 @@ const Female2 = () => {
               display: "flex",
               flexDirection: "row",
               overflowX: "auto",
-              maxWidth: "500px",
+              Width: "400px",
+              height: "200px",
+              gap: "5px",
             }} //pant 3 :-91 -9 444 704
           >
             <button onClick={() => handleChangepant(pant1, 133, 263, 359, 326)}>

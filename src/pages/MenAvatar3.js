@@ -36,7 +36,7 @@ import bg from "../common/assets/Bgdark.jpg"; //imported background image
 import bg1 from "../common/assets/Bgcroqui3.jpg";
 import { useMediaQuery } from "@mui/material";
 
-const MenAvatar2 = () => {
+const MenAvatar3 = () => {
   //Hook for navigation
   const navigate = useNavigate();
   const canvasRef = useRef(null);
@@ -62,6 +62,7 @@ const MenAvatar2 = () => {
   //99, -79, 409, 829;
   const isXsScreen = useMediaQuery("(max-width:600px)");
   // References for canvas and images
+
   const imgRef = useRef(null);
   const shirtref1 = useRef(null);
   const shirtref2 = useRef(null);
@@ -217,22 +218,32 @@ const MenAvatar2 = () => {
         style={{
           display: "flex",
           flexDirection: "row",
-          gap: 20,
+          gap: "140px",
+
           flexWrap: "wrap",
           height: "100vh",
         }} //buttoms for shirts
       >
         <div ref={canvasRef} style={{ width: "50%" }}></div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            maxWidth: "400px",
+            maxHeight: "700px",
+            paddingTop: "70px",
+          }}
+        >
           <div
             style={{
               display: "flex",
-              flexDirection: "row-column",
+              flexDirection: "row",
               overflowX: "auto",
-              maxWidth: "500px",
+              Width: "500px",
+              height: "200px",
+              gap: "5px",
             }}
           >
-            `w`s
             <button
               onClick={() => handleChangeshirt(shirt1, 208, 90, 203, 271)}
             >
@@ -300,7 +311,9 @@ const MenAvatar2 = () => {
               display: "flex",
               flexDirection: "row",
               overflowX: "auto",
-              maxWidth: "400px",
+              Width: "400px",
+              height: "200px",
+              gap: "5px",
             }}
           >
             <button onClick={() => handleChangepant(pant1, 88, -97, 427, 858)}>
@@ -382,4 +395,4 @@ const MenAvatar2 = () => {
   );
 };
 
-export default MenAvatar2;
+export default MenAvatar3;

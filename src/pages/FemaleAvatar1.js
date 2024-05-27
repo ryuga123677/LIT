@@ -16,7 +16,8 @@ import pant4 from "../common/assets/Avatar/femalechar/pants/f_pant4.png";
 import pant5 from "../common/assets/Avatar/femalechar/pants/f_pant5.png";
 import pant6 from "../common/assets/Avatar/femalechar/pants/f_pant6.png";
 
-import bg from "../common/assets/bg.jpg";
+import bg from "../common/assets/Bgdark.jpg";
+import bg1 from "../common/assets/Bgcroqui1.jpg";
 
 const FemaleAvatar1 = () => {
   const navigate = useNavigate();
@@ -50,6 +51,7 @@ const FemaleAvatar1 = () => {
   const pantref6 = useRef(null);
 
   const background = useRef(null);
+  const background1 = useRef(null);
 
   const myP5Ref = useRef(null);
 
@@ -83,6 +85,7 @@ const FemaleAvatar1 = () => {
         shirtref1.current = p.loadImage(shirtImage);
         pantref1.current = p.loadImage(pantImage);
         background.current = p.loadImage(bg);
+        background1.current = p.loadImage(bg1);
       } catch (error) {
         console.error("Error loading image:", error);
       }
@@ -91,13 +94,14 @@ const FemaleAvatar1 = () => {
     const setupSketch = (p) => {
       try {
         p.setup = () => {
-          const canvasWidth = canvasRef.current.offsetWidth;
-          const canvasHeight = canvasRef.current.offsetHeight;
+          const canvasWidth = window.innerWidth;
+          const canvasHeight = window.innerHeight;
           p.createCanvas(canvasWidth, canvasHeight);
         };
         p.draw = () => {
           p.background(background.current);
-          p.image(imgRef.current, -35, 12, 705, 640);
+          p.image(background1.current, 40, 12, 505, 640);
+          p.image(imgRef.current, -39, 12, 705, 640);
           p.image(
             shirtref1.current,
             shirtPosition.x,
@@ -178,13 +182,23 @@ const FemaleAvatar1 = () => {
         }}
       >
         <div ref={canvasRef} style={{ width: "50%" }}></div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            maxWidth: "400px",
+            maxHeight: "700px",
+            paddingTop: "70px",
+          }}
+        >
           <div
             style={{
               display: "flex",
               flexDirection: "row",
               overflowX: "auto",
-              maxWidth: "400px",
+              Width: "500px",
+              height: "200px",
+              gap: "5px",
             }}
           >
             <button
@@ -223,7 +237,9 @@ const FemaleAvatar1 = () => {
               display: "flex",
               flexDirection: "row",
               overflowX: "auto",
-              maxWidth: "400px",
+              Width: "400px",
+              height: "200px",
+              gap: "5px",
             }}
           >
             <button onClick={() => handleChangepant(pant1, 155, 274, 290, 282)}>

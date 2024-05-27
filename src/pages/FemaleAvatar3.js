@@ -21,8 +21,10 @@ import pant6 from "../common/assets/Avatar/femalechar/pants/f_pant6.png";
 //import pant7 from "../common/assets/Avatar/femalechar/pants/";
 
 //imported pant images
-import bg from "../common/assets/bg.jpg";
+import bg from "../common/assets/Bgdark.jpg";
+import bg1 from "../common/assets/Bgcroqui1.jpg";
 //imported background image
+import { useMediaQuery } from "@mui/material";
 const Female3 = () => {
   const navigate = useNavigate();
   const canvasRef = useRef(null);
@@ -41,6 +43,8 @@ const Female3 = () => {
   const [pantPosition, setPantPosition] = useState({ x: 216, y: 253 });
   const [pantScale, setPantScale] = useState({ width: 247, height: 300 });
   // 216, 253, 247, 300)
+
+  const isXsScreen = useMediaQuery("(max-width:600px)"); // References for canvas and images`
 
   const imgRef = useRef(null);
   const shirtref1 = useRef(null);
@@ -62,6 +66,7 @@ const Female3 = () => {
   //const pantref7 = useRef(null);
 
   const background = useRef(null);
+  const background1 = useRef(null);
 
   const myP5Ref = useRef(null);
   // using slider so to get a position value for cloth!!
@@ -95,6 +100,7 @@ const Female3 = () => {
         shirtref1.current = p.loadImage(shirtImage);
         pantref1.current = p.loadImage(pantImage);
         background.current = p.loadImage(bg);
+        background1.current = p.loadImage(bg1);
       } catch (error) {
         console.error("Error loading image:", error);
       }
@@ -103,20 +109,21 @@ const Female3 = () => {
     const setupSketch = (p) => {
       try {
         p.setup = () => {
-          const canvasWidth = canvasRef.current.offsetWidth;
-          const canvasHeight = canvasRef.current.offsetHeight;
+          const canvasWidth = window.innerWidth;
+          const canvasHeight = window.innerHeight;
           p.createCanvas(canvasWidth, canvasHeight);
         };
         p.draw = () => {
           p.background(background.current);
+          p.image(background1.current, 112, 12, 405, 640);
           p.image(imgRef.current, -42, 12, 705, 640);
-          /* p.image(
+          p.image(
             pantref1.current,
             pantPosition.x,
             pantPosition.y,
             pantScale.width,
             pantScale.height
-          );*/
+          );
           p.image(
             shirtref1.current,
             shirtPosition.x,
@@ -190,13 +197,23 @@ const Female3 = () => {
         }}
       >
         <div ref={canvasRef} style={{ width: "50%" }}></div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            maxWidth: "400px",
+            maxHeight: "700px",
+            paddingTop: "70px",
+          }}
+        >
           <div
             style={{
               display: "flex",
               flexDirection: "row",
               overflowX: "auto",
-              maxWidth: "400px",
+              Width: "500px",
+              height: "200px",
+              gap: "5px",
             }}
           >
             <button
@@ -251,7 +268,9 @@ const Female3 = () => {
               display: "flex",
               flexDirection: "row",
               overflowX: "auto",
-              maxWidth: "400px",
+              Width: "400px",
+              height: "200px",
+              gap: "5px",
             }}
           >
             <button onClick={() => handleChangepant(pant1, 76, 49, 479, 561)}>
